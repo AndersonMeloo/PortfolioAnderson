@@ -39,9 +39,16 @@ function Header() {
             <div className={sass.containerHeader}>
 
                 <div className={sass.containerHome}>
-                    <a href="#" className={sass.nomeMouse}>
-                        <Copyright size={12} className={sass.iconHome} />
-                        Anderson Melo
+                    <a href="#" className={sass.animatedLink}>
+
+                        <span className={sass.textWrapper}>
+                            <span className={`${sass.text} ${sass.textTop}`}>
+                                <Copyright size={12} className={sass.iconHome} /> Anderson Melo
+                            </span>
+                            <span className={`${sass.text} ${sass.textBottom}`}>
+                                <Copyright size={12} className={sass.iconHome} /> Anderson Melo
+                            </span>
+                        </span>
                     </a>
                 </div>
 

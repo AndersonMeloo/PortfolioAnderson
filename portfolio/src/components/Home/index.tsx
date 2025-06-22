@@ -1,9 +1,11 @@
 import { DotLottiePlayer } from '@dotlottie/react-player';
 import sass from './sass.module.scss';
 import BotaoInterativo from './MoverButton';
+import Slider from '../Slider';
+import { Github } from 'lucide-react';
 
 function Home() {
-    
+
     return (
         <>
             <div className={sass.containerHome}>
@@ -14,30 +16,8 @@ function Home() {
                         <span className={sass.containerSpan}>Sou um </span><span>Desenvolvedor Full-Stack!</span>
                         <br />
                     </h2>
-                    {/* 
-                    <div>
-                        <BotaoInterativo>
-                            <p>Entrar em Contato</p>
-                        </BotaoInterativo>
-                    </div> */}
                 </div>
-
-                {/* <div className={sass.containerAnimation}>
-                    <div className={sass.container}>
-                        <div className={sass.containerLottie}>
-                            <div className={sass.containerButton}>
-                                <BotaoInterativo>
-                                    <p>Entrar em Contato</p>
-                                </BotaoInterativo>
-                            </div>
-                            <DotLottiePlayer
-                                src="https://lottie.host/13ccd450-129b-44fe-9df6-2b0e5a309d25/XzfIKx1I0Q.lottie"
-                                loop
-                                autoplay
-                            />
-                        </div>
-                    </div>
-                </div> */}
+           
                 <div className={sass.containerAnimation}>
 
                     <div className={sass.containerButton}>
@@ -61,6 +41,14 @@ function Home() {
                 </div>
             </div>
             <div className={sass.containerLinha}></div>
+
+            <div className={sass.containerTitleSlide}>
+                <Slider>
+                    <h2>Anderson Rodrigues de Melo
+                        <Github className={sass.containerGitHub} />
+                        Desenvolvedor Full Stack</h2>
+                </Slider>
+            </div>
         </>
     );
 }
