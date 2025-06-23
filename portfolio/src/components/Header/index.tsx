@@ -1,6 +1,7 @@
 import { Circle, Copyright, MoonIcon, SunIcon } from 'lucide-react';
 import sass from './sass.module.scss'
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 
 type MudarTema = 'dark' | 'light'
 
@@ -43,10 +44,12 @@ function Header() {
 
                         <span className={sass.textWrapper}>
                             <span className={`${sass.text} ${sass.textTop}`}>
-                                <Copyright size={12} className={sass.iconHome} /> Anderson Melo
+                                <Copyright size={12} className={sass.iconHome} />
+                                <Link to='/'> Anderson Melo</Link>
                             </span>
                             <span className={`${sass.text} ${sass.textBottom}`}>
-                                <Copyright size={12} className={sass.iconHome} /> Anderson Melo
+                                <Copyright size={12} className={sass.iconHome} />
+                                <Link to='/'> Anderson Melo</Link>
                             </span>
                         </span>
                     </a>
@@ -70,9 +73,9 @@ function Header() {
                             <p>Redes</p>
                         </div>
                         <div className={sass.linkGrid}>
-                            <a href="">Linkedin</a>
-                            <a href="">Email</a>
-                            <a href="">Intagram</a>
+                            <a href="https://www.linkedin.com/in/anderson-melo-68010120a/" target='_blank'>Linkedin</a>
+                            <a href=''>Email</a>
+                            <a href="https://www.instagram.com/andersonr_melo/" target='_blank'>Intagram</a>
                         </div>
                     </div>
 
@@ -81,8 +84,8 @@ function Header() {
                             <p>Navegar</p>
                         </div>
                         <div className={sass.linkGrid}>
-                            <a href="">Projetos</a>
-                            <a href="">Sobre</a>
+                            <Link to='/Projetos'>Projetos</Link>
+                            <Link to='/Sobre'>Sobre</Link>
                             <a href="">Contato</a>
                         </div>
                     </div>
