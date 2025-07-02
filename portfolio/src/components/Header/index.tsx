@@ -39,54 +39,57 @@ function Header() {
         <>
             <div className={sass.containerHeader}>
 
-                <div className={sass.containerHome}>
-                    <a href="#" className={sass.animatedLink}>
+                <div className={sass.container}>
 
-                        <span className={sass.textWrapper}>
-                            <span className={`${sass.text} ${sass.textTop}`}>
-                                <Copyright size={12} className={sass.iconHome} />
-                                <Link to='/'> Anderson Melo</Link>
+                    <div className={sass.containerHome}>
+                        <a href="#" className={sass.animatedLink}>
+
+                            <span className={sass.textWrapper}>
+                                <span className={`${sass.text} ${sass.textTop}`}>
+                                    <Copyright size={12} className={sass.iconHome} />
+                                    <Link to='/'> Anderson Melo</Link>
+                                </span>
+                                <span className={`${sass.text} ${sass.textBottom}`}>
+                                    <Copyright size={12} className={sass.iconHome} />
+                                    <Link to='/'> Anderson Melo</Link>
+                                </span>
                             </span>
-                            <span className={`${sass.text} ${sass.textBottom}`}>
-                                <Copyright size={12} className={sass.iconHome} />
-                                <Link to='/'> Anderson Melo</Link>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-
-                <span className={sass.mudarTema} onClick={handleClickTheme}>
-                    {nextThemeIcon[theme]}
-                </span>
-
-                <div className={sass.containerLinks}>
-
-                    <div className={sass.div1}>
-                        <p>Status
-                            <Circle size={8} className={sass.circleStatus} />
-                        </p>
-                        <p className='containerP'>Atualmente disponivel para contratação</p>
+                        </a>
                     </div>
 
-                    <div className={sass.div2}>
-                        <div>
-                            <p>Redes</p>
-                        </div>
-                        <div className={sass.linkGrid}>
-                            <a href="https://www.linkedin.com/in/anderson-melo-68010120a/" target='_blank'>Linkedin</a>
-                            <a href=''>Email</a>
-                            <a href="https://www.instagram.com/andersonr_melo/" target='_blank'>Intagram</a>
-                        </div>
-                    </div>
+                    <span className={sass.mudarTema} onClick={handleClickTheme}>
+                        {nextThemeIcon[theme]}
+                    </span>
 
-                    <div className={sass.div3}>
-                        <div>
-                            <p>Navegar</p>
+                    <div className={sass.containerLinks}>
+
+                        <div className={sass.div1}>
+                            <p>Status
+                                <Circle size={8} className={sass.circleStatus} />
+                            </p>
+                            <p className='containerP'>Atualmente disponivel para contratação</p>
                         </div>
-                        <div className={sass.linkGrid}>
-                            <Link to='/Projetos'>Projetos</Link>
-                            <Link to='/Sobre'>Sobre</Link>
-                            <a href="">Contato</a>
+
+                        <div className={sass.div2}>
+                            <div>
+                                <p>Redes Sociais</p>
+                            </div>
+                            <div className={sass.linkGrid}>
+                                <a href="https://www.linkedin.com/in/anderson-melo-68010120a/" target='_blank'>Linkedin</a>
+                                <a href='mailto:andersonrodriguesmelo@hotmail.com'>Email</a>
+                                <a href="https://www.instagram.com/andersonr_melo/" target='_blank'>Intagram</a>
+                            </div>
+                        </div>
+
+                        <div className={sass.div3}>
+                            <div>
+                                <p>Navegar</p>
+                            </div>
+                            <div className={sass.linkGrid}>
+                                <Link to='/Projetos'>Projetos</Link>
+                                <Link to='/Sobre'>Sobre</Link>
+                                <a href="">Contato</a>
+                            </div>
                         </div>
                     </div>
                 </div>
