@@ -10,3 +10,5 @@ createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </React.StrictMode>
 )
+
+// Reverter último commit: git reset --hard HEAD~1
