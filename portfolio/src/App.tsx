@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Home from './components/Home'
 import Projetos from './components/Projetos'
 import Sobre from './components/Sobre'
+import NoutFound from './Pages/NotFound'
 
 function Layout() {
 
@@ -29,6 +30,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path='Projetos' element={<Projetos />} />
         <Route path='Sobre' element={<Sobre />} />
+        <Route path='NotFound' element={<NoutFound />} />
       </Route>
 
     </Routes>
