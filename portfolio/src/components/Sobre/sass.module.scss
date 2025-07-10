@@ -1,18 +1,219 @@
 .containerSobre {
-    width: 90%;
+  width: 90%;
+  padding: 2rem 1.5rem;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid rgb(225, 225, 225);
+  border-top: none;
+  border-bottom: none;
+
+  .containerEmail {
     padding: 1.5rem;
-    height: auto;
-    margin: 0 auto;
 
     .icon {
-        rotate: (180deg);
-        margin-bottom: 2rem;
-        color: #ff0000;
-        font-size: 1rem;
+      margin-bottom: 2rem;
+      color: #ff0000;
+      font-size: 1rem;
+      transform: rotate(0);
+      rotate: (180deg);
+      transition: transform 0.3s ease-in-out;
     }
 
-    .containerEmail {
-        padding: 1.5rem;
-        margin-left: .4rem;
+    a {
+      text-decoration: none;
+      color: #000;
+      font-size: .9rem;
+      font-family: 'Montserrat', sans-serif;
+      border-bottom: 1px solid #c10528;
+      transition: .3s ease-in-out;
     }
+
+    &:hover .icon {
+      transform: rotate(360deg);
+    }
+  }
+
+  .container {
+    color: #e5e5e5;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      color: #000;
+      letter-spacing: 1px;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .animation {
+      height: 30px;
+      overflow: hidden;
+      margin-left: 1rem;
+
+      .textos {
+        font-size: 1rem;
+      }
+
+      >div>div {
+        padding: 0.15rem 0.75rem;
+        height: 2.81rem;
+        margin-bottom: 2.81rem;
+        display: inline-block;
+      }
+
+      .firts,
+      .second,
+      .third {
+        font-size: 1rem;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      div:first-child {
+        animation: text-animation 8s infinite;
+      }
+
+      .first div {
+        background-color: #20a7d8;
+      }
+
+      .second div {
+        // background-color: #CD921E;
+        background-color: #000;
+      }
+
+      .third div {
+        background-color: #c10528;
+      }
+    }
+
+    @keyframes text-animation {
+
+      0%,
+      10% {
+        margin-top: 0;
+      }
+
+      20%,
+      30% {
+        margin-top: -5.62rem;
+      }
+
+      40%,
+      60% {
+        margin-top: -11.24rem;
+      }
+
+      70%,
+      80% {
+        margin-top: -5.62rem;
+      }
+
+      90%,
+      100% {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.containerApresentacao {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  border: 1px solid rgb(225, 225, 225);
+  position: relative;
+
+  .linha {
+    height: 19px;
+    width: 92%;
+    margin: 0 auto;
+    background-color: #000;
+    // background-color: #367086;
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translate(-50%, -50%);
+
+    p {
+      position: relative;
+      color: #fff;
+      left: 0;
+      bottom: 1.1rem;
+      font-family: 'Nunito', sans-serif;
+      margin-left: 1rem;
+    }
+  }
+
+  .container {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    border: 1px solid rgb(225, 225, 225);
+    padding: 1.5rem;
+
+    .containerTexto,
+    .containerImagem {
+      width: 50%;
+      margin: 2rem 0;
+    }
+
+    .containerTexto {
+      margin-left: 3rem;
+
+      p {
+        width: 60%;
+        font-family: 'Montserrat', sans-serif;
+      }
+    }
+
+    .containerImagem {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 50%;
+        border-radius: .4rem;
+        box-shadow: 0 0 16px 2px rgba(0, 0, 0, .3);
+      }
+    }
+  }
+}
+
+.containerSobreMim {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  border: 1px solid rgb(225, 225, 225);
+  border-right: 0;
+  border-left: 0;
+
+  .containerTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    height: 120px;
+
+    p {
+      font-size: 4rem;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 2px;
+      font-weight: 400;
+
+      .icon {
+        background-color: #000;
+        color: #fff;
+        padding: .4rem;
+        border-radius: 6px;
+        margin: 0 2rem;
+      }
+    }
+  }
 }

@@ -2,6 +2,7 @@ import { Circle, Copyright, MoonIcon, SunIcon } from 'lucide-react';
 import sass from './sass.module.scss'
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import '../../assets/sass/global.scss'
 
 type MudarTema = 'dark' | 'light'
 

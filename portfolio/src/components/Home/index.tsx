@@ -3,6 +3,7 @@ import sass from './sass.module.scss';
 import BotaoInterativo from './MoverButton';
 import Slider from '../Slider';
 import { Github } from 'lucide-react';
+import '../../assets/sass/global.scss'
 
 function Home() {
 
@@ -17,7 +18,7 @@ function Home() {
                         <br />
                     </h2>
                 </div>
-           
+
                 <div className={sass.containerAnimation}>
 
                     <div className={sass.containerButton}>
@@ -42,13 +43,15 @@ function Home() {
             </div>
             <div className={sass.containerLinha}></div>
 
-            <div className={sass.containerTitleSlide}>
-                <Slider>
+            <Slider>
+                <div className={sass.containerTitleSlide}>
                     <h2>Anderson Rodrigues de Melo
-                        <Github className={sass.containerGitHub} />
+                        <span>
+                            <Github className={sass.containerGitHub} />
+                        </span>
                         Desenvolvedor Full Stack</h2>
-                </Slider>
-            </div>
+                </div>
+            </Slider>
         </>
     );
 }
