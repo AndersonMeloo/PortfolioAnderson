@@ -1,10 +1,39 @@
 import { Github, MoveUpLeft } from 'lucide-react';
 import sass from './sass.module.scss'
 import '../../assets/sass/global.scss'
-import Slider from '../Slider';
-import TextAnimation from '../Animations/TextAnimation/TextAnimation';
+import Slider from '../../Animations/Slider';
+import { useState } from 'react';
 
 function Sobre() {
+
+  const [activeSkill, setActiveSkill] = useState<'react' | 'typescript' | 'mysql' | 'php' | null>(null)
+
+  const skillTexts = {
+
+    react: {
+      title: 'React',
+      description:
+        'Biblioteca JavaScript para construir interfaces de usuário interativas e reutilizáveis, baseada em componentes.',
+    },
+
+    typescript: {
+      title: 'TypeScript',
+      description:
+        'Superset do JavaScript que adiciona tipagem estática, facilitando a detecção de erros e aumentando a robustez do código.',
+    },
+
+    mysql: {
+      title: 'MySQL',
+      description:
+        'Sistema de gerenciamento de banco de dados relacional muito utilizado para armazenar e consultar dados de aplicações.',
+    },
+
+    php: {
+      title: 'PHP',
+      description:
+        'Linguagem de script server-side usada para desenvolvimento web dinâmico e construção de sites e APIs.',
+    }
+  }
 
   return (
 
@@ -57,22 +86,44 @@ function Sobre() {
 
             <h2>&lt;/ Softs Skills</h2>
             <h3>Linguagens e Frameworks</h3>
-            <p>Passe o cursor ou clique na imagem</p>
           </div>
 
           <div className={sass.softsImgs}>
 
-            <div className={sass.imgReact}></div>
-            <div className={sass.imgTypeScript}></div>
-            <div className={sass.imgMySQL}></div>
-            <div className={sass.imgPhp}></div>
+            <div className={sass.imgReact}
+              onMouseEnter={() => setActiveSkill('react')}
+              onMouseLeave={() => setActiveSkill(null)}
+            ></div>
+
+            <div className={sass.imgTypeScript}
+              onMouseEnter={() => setActiveSkill('typescript')}
+              onMouseLeave={() => setActiveSkill(null)}
+            ></div>
+
+            <div className={sass.imgMySQL}
+              onMouseEnter={() => setActiveSkill('typescript')}
+              onMouseLeave={() => setActiveSkill(null)}
+            ></div>
+
+            <div className={sass.imgPhp}
+              onMouseEnter={() => setActiveSkill('php')}
+              onMouseLeave={() => setActiveSkill(null)}
+            ></div>
           </div>
 
-           <TextAnimation />
 
           <div className={sass.softsText}>
-            <h1>React</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem qui atque nisi, ullam officiis eos saepe nihil labore eveniet ipsam temporibus aliquam voluptates sequi unde provident debitis. Suscipit, dolorum in.</p>
+            {activeSkill ? (
+              <>
+                <h1>{skillTexts[activeSkill].title}</h1>
+                <p>{skillTexts[activeSkill].description}</p>
+              </>
+            ) : (
+              <>
+                <h1>Passe o cursor na imagem</h1>
+                <p>O texto da skill aparecerá aqui</p>
+              </>
+            )}
           </div>
 
         </div>

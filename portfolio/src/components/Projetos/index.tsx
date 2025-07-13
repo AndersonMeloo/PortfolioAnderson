@@ -1,11 +1,11 @@
+
 function Projetos() {
 
-    return (
+  return (
 
-        <>
-        
-        </>
-      );
+    <>
+    </>
+  );
 }
 
 export default Projetos;

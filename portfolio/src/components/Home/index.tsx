@@ -1,7 +1,7 @@
 import { DotLottiePlayer } from '@dotlottie/react-player';
 import sass from './sass.module.scss';
 import BotaoInterativo from './MoverButton';
-import Slider from '../Slider';
+import Slider from '../../Animations/Slider';
 import { Github } from 'lucide-react';
 import '../../assets/sass/global.scss'
 
