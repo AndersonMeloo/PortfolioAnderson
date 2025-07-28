@@ -353,11 +353,13 @@
         padding: 1rem 0;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2rem';
+        gap: 2rem;
       }
 
       @media screen and (min-width: 400px) and (max-width: 900px) {
         padding: 1rem 0;
+        position: relative;
+        top: 2rem;
       }
 
       .imgReact,
