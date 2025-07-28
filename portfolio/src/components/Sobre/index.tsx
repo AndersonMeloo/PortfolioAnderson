@@ -3,10 +3,11 @@ import sass from './sass.module.scss'
 import '../../assets/sass/global.scss'
 import Slider from '../../Animations/Slider';
 import { useState } from 'react';
+import TextType from '../../Animations/TextType/TextType';
 
 function Sobre() {
 
-  const [activeSkill, setActiveSkill] = useState<'react' | 'typescript' | 'mysql' | 'php' | null>(null)
+  const [activeSkill, setActiveSkill] = useState<'react' | 'typescript' | 'mysql' | 'php' | 'javascript' | null>(null)
 
   const skillTexts = {
 
@@ -32,6 +33,12 @@ function Sobre() {
       title: 'PHP',
       description:
         'Linguagem de script server-side usada para desenvolvimento web dinâmico e construção de sites e APIs.',
+    },
+
+    javascript: {
+      title: 'JavaScript',
+      description:
+        'Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem' 
     }
   }
 
@@ -71,6 +78,11 @@ function Sobre() {
               colaboração e resolução de problemas, essenciais para atuar de forma eficaz em equipes e entregar
               soluções de alto impacto. Com uma mentalidade de aprendizado contínuo, busco sempre melhorar e
               contribuir para o sucesso dos projetos em que estou envolvido.</p>
+
+            <br /><br />
+            <p>Eniac: Cursando
+              <br />
+              Software Enginner</p>
           </div>
 
           <div className={sass.containerImagem}>
@@ -109,10 +121,15 @@ function Sobre() {
               onMouseEnter={() => setActiveSkill('php')}
               onMouseLeave={() => setActiveSkill(null)}
             ></div>
+
+            <div className={sass.imgJavaScript}
+              onMouseEnter={() => setActiveSkill('javascript')}
+              onMouseLeave={() => setActiveSkill(null)}
+            ></div>
           </div>
 
-
           <div className={sass.softsText}>
+
             {activeSkill ? (
               <>
                 <h1>{skillTexts[activeSkill].title}</h1>
@@ -124,6 +141,17 @@ function Sobre() {
                 <p>O texto da skill aparecerá aqui</p>
               </>
             )}
+
+            <TextType
+              text={[
+                { content: "Veja mais:", link: "/projetos", target: "_self" },
+                { content: "Meus Projetos", link: "/projetos", target: "_self" }
+              ]}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
+            />
           </div>
 
         </div>

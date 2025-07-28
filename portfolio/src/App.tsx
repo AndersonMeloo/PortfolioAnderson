@@ -1,41 +1,48 @@
-import { Route, Routes, Outlet } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
 
-import './assets/sass/global.scss'
+import './assets/sass/global.scss';
 
-import Header from './components/Header'
-import Home from './components/Home'
-import Projetos from './components/Projetos'
-import Sobre from './components/Sobre'
-import NoutFound from './Pages/NotFound'
+// import { useEffect } from 'react';
+// import './Animations/Star/star.scss';
+// import { comecaCriandoEstrelas } from './Animations/Star/criaEstrelas';
 
-function Layout() {
-
-  return (
-
-    <>
-      <Header />
-      <Outlet />
-    </>
-  )
-}
+import Header from './components/Header';
+import Home from './components/Home';
+import Projetos from './components/Projetos';
+import Sobre from './components/Sobre';
+import NotFound from './Pages/NotFound';
 
 function App() {
 
+  // useEffect(() => {
+  //   comecaCriandoEstrelas();
+  // }, []);
+
   return (
+    <>
+      {/* <div
+        id="star-container"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          pointerEvents: 'none',
+          zIndex: 1,
+        }}
+      /> */}
 
+      <Header />
 
-    <Routes>
-
-      <Route path='/' element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path='Projetos' element={<Projetos />} />
-        <Route path='Sobre' element={<Sobre />} />
-        <Route path='NotFound' element={<NoutFound />} />
-      </Route>
-
-    </Routes>
-
-  )
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Projetos" element={<Projetos />} />
+        <Route path="/Sobre" element={<Sobre />} />
+        <Route path="/NotFound" element={<NotFound />} />
+      </Routes>
+    </>
+  );
 }
 
-export default App
+export default App;

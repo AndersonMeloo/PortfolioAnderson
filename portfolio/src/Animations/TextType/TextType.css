@@ -1,0 +1,26 @@
+span.text-type__content {
+    position: relative;
+    top: 20px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    background-color: #000;
+    color: #fff !important;
+    padding: .4rem 1rem;
+    border-radius: .4rem;
+    transition: .3s ease-in-out, background-color .3s ease-in-out;
+    cursor: pointer;
+}
+
+span.text-type__content:hover {
+    background-color: #4ea3c5;
+}
+
+span,
+a {
+    text-decoration: none !important;
+}
+
+span.text-type__cursor {
+    color: transparent;
+}

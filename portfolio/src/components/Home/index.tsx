@@ -24,6 +24,9 @@ function Home() {
                     <div className={sass.containerButton}>
                         <BotaoInterativo>
                             <p>Entrar em Contato</p>
+                            {/* <a href="https://api.whatsapp.com/send/?phone=11988730794&text&type=phone_number&app_absent=0" target='_blank'>
+                                Entrar em Contato
+                            </a> */}
                         </BotaoInterativo>
                     </div>
 

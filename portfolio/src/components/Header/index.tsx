@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import '../../assets/sass/global.scss'
 
-type MudarTema = 'dark' | 'light'
+type AvailableTheme = 'dark' | 'light'
 
 function Header() {
 
     const [theme, setTheme] = useState(() => {
 
-        const storageTheme = localStorage.getItem('theme') as MudarTema || 'dark'
+        const storageTheme = localStorage.getItem('theme') as AvailableTheme || 'dark'
         return storageTheme
     })
 
@@ -43,7 +43,7 @@ function Header() {
                 <div className={sass.container}>
 
                     <div className={sass.containerHome}>
-                        <a href="#" className={sass.animatedLink}>
+                        <Link to='/' className={sass.animatedLink}>
 
                             <span className={sass.textWrapper}>
                                 <span className={`${sass.text} ${sass.textTop}`}>
@@ -55,7 +55,7 @@ function Header() {
                                     <Link to='/'> Anderson Melo</Link>
                                 </span>
                             </span>
-                        </a>
+                        </Link>
                     </div>
 
                     <span className={sass.mudarTema} onClick={handleClickTheme}>
@@ -78,7 +78,7 @@ function Header() {
                             <div className={sass.linkGrid}>
                                 <a href="https://www.linkedin.com/in/anderson-melo-68010120a/" target='_blank'>Linkedin</a>
                                 <a href='mailto:andersonrodriguesmelo@hotmail.com'>Email</a>
-                                <a href="https://www.instagram.com/andersonr_melo/" target='_blank'>Intagram</a>
+                                <a href="https://github.com/AndersonMeloo" target='_blank'>GitHub</a>
                             </div>
                         </div>
 
@@ -89,7 +89,7 @@ function Header() {
                             <div className={sass.linkGrid}>
                                 <Link to='/Projetos'>Projetos</Link>
                                 <Link to='/Sobre'>Sobre</Link>
-                                <a href="">Contato</a>
+                                <a href="https://api.whatsapp.com/send/?phone=11988730794&BemVindo-DisponivelParaContratações" target='_blank'>Contato</a>
                             </div>
                         </div>
                     </div>

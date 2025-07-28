@@ -1,13 +1,11 @@
-function NoutFound() {
+function NotFound() {
 
     return (
 
         <>
-      
+
         </>
     );
 }
 
-export default NoutFound;
-
-
+export default NotFound;

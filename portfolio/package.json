@@ -12,6 +12,8 @@
   "dependencies": {
     "@dotlottie/react-player": "^1.6.19",
     "@gsap/react": "^2.1.2",
+    "framer-motion": "^12.23.6",
+    "gsap": "^3.13.0",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.517.0",
     "react": "^18.3.1",
