@@ -17,6 +17,10 @@
         width: 20%;
         text-align: center;
 
+        @media screen and (min-width: 320px) and (max-width: 880px) {
+            width: 45%;
+        }
+
         .animatedLink {
             display: flex;
             align-items: center;
@@ -93,7 +97,6 @@
     }
 
     .mudarTema {
-        // background-color: #4ea3c5;
         background-color: #000;
         color: #fff;
         padding: .6rem;
@@ -152,9 +155,25 @@
 
                 .circleStatus {
                     background-color: #28a028;
-                    color: #28a028;
                     border-radius: 100%;
+                    animation: pulse-animation 2s infinite;
+                    vertical-align: middle;
+                    transform: translateY(-0.1em);
                 }
+            }
+        }
+
+        @keyframes pulse-animation {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+                box-shadow: 0 0 0 0.2rem #28a028;
+            }
+
+            100% {
+                transform: scale(1.2);
+                opacity: 0.5;
+                box-shadow: 0 0 #28a028;
             }
         }
 
@@ -240,5 +259,155 @@
     &:hover::before {
         transform: translateY(-100%) skewY(0deg);
         top: 0;
+    }
+}
+
+// MENU HAMBURGUER
+.navTrigger {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+    display: none;
+
+    svg {
+        width: 64px;
+        height: 48px;
+        stroke: #000;
+        stroke-width: 4px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+        position: relative;
+        right: 3rem;
+
+        path {
+            transition: stroke-dasharray 0.85s ease, stroke-dashoffset 0.85s ease;
+            stroke-dasharray: 26px 100px;
+            stroke-dashoffset: 126px;
+
+            &:nth-child(2) {
+                transition-timing-function: ease-in;
+                stroke-dashoffset: 100px;
+                stroke-dasharray: 26px 74px;
+            }
+
+            &:nth-child(3) {
+                stroke-dashoffset: 133px;
+                stroke-dasharray: 26px 107px;
+            }
+        }
+    }
+}
+
+.navTrigger.active {
+
+    svg {
+        stroke: #000;
+        z-index: 111;
+
+        path {
+            stroke-dashoffset: 57px;
+
+            &:nth-child(1),
+            &:nth-child(3) {
+                transition-timing-function: cubic-bezier(.2, .4, .2, 1.1);
+                transition-delay: 0.15s;
+            }
+
+            &:nth-child(2) {
+                stroke-dashoffset: 2px;
+                stroke-dasharray: 1px 100px;
+                transition-duration: 0.4s;
+                transition-delay: 0s;
+            }
+
+            &:nth-child(3) {
+                stroke-dashoffset: 58px;
+            }
+        }
+    }
+}
+
+.navMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 4rem;
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: all 0.375s ease;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .navLinks {
+            margin: .8rem 0 0 .8rem;
+            color: #20A7D8;
+        }
+
+        li,
+        a {
+            margin: .6rem 0 0 .6rem;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        a {
+            margin: 0 0 0 2rem;
+        }
+    }
+}
+
+.navMenu.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+    // background-color: #20A7D8;
+    background-color: rgba(239, 239, 239, 1);
+    display: block;
+}
+
+@media (max-width: 880px) {
+
+    .containerLinks {
+        display: none !important;
+    }
+
+    .navTrigger {
+        display: block !important;
+    }
+
+    .navMenu {
+        display: block !important;
+    }
+}
+
+@media (min-width: 881px) {
+
+    .containerLinks {
+        display: flex !important;
+    }
+
+    .navTrigger {
+        display: none !important;
+    }
+
+    .navMenu {
+        display: none !important;
     }
 }
