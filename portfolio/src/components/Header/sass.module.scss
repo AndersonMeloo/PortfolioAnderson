@@ -19,6 +19,7 @@
 
         @media screen and (min-width: 320px) and (max-width: 880px) {
             width: 45%;
+            z-index: 999;
         }
 
         .animatedLink {
@@ -107,6 +108,7 @@
         text-align: center;
         transition: transform .3s ease-in-out, background-color .3s ease-in-out;
         cursor: pointer;
+        z-index: 999;
 
         &:hover {
             background-color: #4ea3c5;

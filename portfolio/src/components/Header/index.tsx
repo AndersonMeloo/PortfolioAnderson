@@ -78,9 +78,9 @@ function Header() {
                     >
                         <ul>
                             <li className={sass.navLinks}>Navegar</li>
-                            <li><Link to='/Projetos'>Projetos</Link></li>
                             <li><Link to='/Sobre'>Sobre</Link></li>
-                            <li><Link to='/'>Home</Link></li>
+                            <li><Link to='/Projetos'>Projetos</Link></li>
+                            {/* <li><Link to='/'>Home</Link></li>' */}
 
                             <li className={sass.navLinks}>Redes Sociais</li>
                             <li><a href="https://www.linkedin.com/in/anderson-melo-68010120a/" target='_blank' rel="noreferrer">Linkedin</a></li>
