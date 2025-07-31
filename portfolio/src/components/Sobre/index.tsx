@@ -107,8 +107,8 @@ function Sobre() {
               <h2>Desenvolvimento Front-End</h2>
 
               <p>React</p>
-              <p>TypeScript</p>
-              <p>JavaScript</p>
+              <p>TypeScript & JavaScript</p>
+              <p>NodeJS</p>
               <p>Consumo de APIs REST</p>
 
             </div>
@@ -238,6 +238,8 @@ function Sobre() {
             <p>PHP</p>
             <div className={sass.circle}></div>
             <p>mySQL</p>
+            <div className={sass.circle}></div>
+            <p>NodeJS</p>
             <div className={sass.circle}></div>
             <p>Git</p>
             <div className={sass.circle}></div>
