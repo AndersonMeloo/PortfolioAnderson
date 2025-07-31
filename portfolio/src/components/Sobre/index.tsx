@@ -3,7 +3,7 @@ import sass from './sass.module.scss'
 import '../../assets/sass/global.scss'
 import Slider from '../../Animations/Slider';
 // import { useState } from 'react';
-import TextType from '../../Animations/TextType/TextType';
+// import TextType from '../../Animations/TextType/TextType';
 
 function Sobre() {
 
@@ -243,7 +243,7 @@ function Sobre() {
             <div className={sass.circle}></div>
           </div>
 
-          <div className={sass.projects}>
+          {/* <div className={sass.projects}>
 
             <div className={sass.teste}>
               <TextType
@@ -257,7 +257,7 @@ function Sobre() {
                 cursorCharacter="|"
               />
             </div>
-          </div>
+          </div> */}
 
         </div>
       </div>
