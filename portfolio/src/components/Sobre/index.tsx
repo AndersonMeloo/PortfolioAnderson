@@ -2,45 +2,45 @@ import { Github, MoveUpLeft } from 'lucide-react';
 import sass from './sass.module.scss'
 import '../../assets/sass/global.scss'
 import Slider from '../../Animations/Slider';
-import { useState } from 'react';
+// import { useState } from 'react';
 import TextType from '../../Animations/TextType/TextType';
 
 function Sobre() {
 
-  const [activeSkill, setActiveSkill] = useState<'react' | 'typescript' | 'mysql' | 'php' | 'javascript' | null>(null)
+  //   const [activeSkill, setActiveSkill] = useState<'react' | 'typescript' | 'mysql' | 'php' | 'javascript' | null>(null)
 
-  const skillTexts = {
+  //   const skillTexts = {
 
-    react: {
-      title: 'React',
-      description:
-        'Biblioteca JavaScript para construir interfaces de usuário interativas e reutilizáveis, baseada em componentes.',
-    },
+  //     react: {
+  //       title: 'React',
+  //       description:
+  //         'Biblioteca JavaScript para construir interfaces de usuário interativas e reutilizáveis, baseada em componentes.',
+  //     },
 
-    typescript: {
-      title: 'TypeScript',
-      description:
-        'Superset do JavaScript que adiciona tipagem estática, facilitando a detecção de erros e aumentando a robustez do código.',
-    },
+  //     typescript: {
+  //       title: 'TypeScript',
+  //       description:
+  //         'Superset do JavaScript que adiciona tipagem estática, facilitando a detecção de erros e aumentando a robustez do código.',
+  //     },
 
-    mysql: {
-      title: 'MySQL',
-      description:
-        'Sistema de gerenciamento de banco de dados relacional muito utilizado para armazenar e consultar dados de aplicações.',
-    },
+  //     mysql: {
+  //       title: 'MySQL',
+  //       description:
+  //         'Sistema de gerenciamento de banco de dados relacional muito utilizado para armazenar e consultar dados de aplicações.',
+  //     },
 
-    php: {
-      title: 'PHP',
-      description:
-        'Linguagem de script server-side usada para desenvolvimento web dinâmico e construção de sites e APIs.',
-    },
+  //     php: {
+  //       title: 'PHP',
+  //       description:
+  //         'Linguagem de script server-side usada para desenvolvimento web dinâmico e construção de sites e APIs.',
+  //     },
 
-    javascript: {
-      title: 'JavaScript',
-      description:
-        'Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem' 
-    }
-  }
+  //     javascript: {
+  //       title: 'JavaScript',
+  //       description:
+  //         'Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem'
+  //     }
+  //   }
 
   return (
 
@@ -91,16 +91,74 @@ function Sobre() {
         </div>
       </div>
 
-      <div className={sass.containerSofts}>
+      <div className={sass.containerSkills}>
+
+        <div className={sass.linha}>
+          <p>Habilidades</p>
+        </div>
+
+        <div className={sass.containerPrincipal}>
+
+
+          <div className={sass.containerTexts}>
+
+            <div className={sass.container}>
+
+              <h2>Desenvolvimento Front-End</h2>
+
+              <p>React</p>
+              <p>TypeScript</p>
+              <p>JavaScript</p>
+              <p>Consumo de APIs REST</p>
+
+            </div>
+
+            <div className={sass.containerOne}>
+
+              <h2>Desenvolvimento Back-End</h2>
+
+              <p>PHP</p>
+              <p>MySQL</p>
+              <p>Lorem lorem lorem lorem</p>
+              <p>Lorem lorem lorem lorem</p>
+            </div>
+          </div>
+
+          <div className={sass.containerTextsOne}>
+
+            <div className={sass.container}>
+              <h2>Lógica e Estrutura de Dados</h2>
+
+              <p>Estruturas (listas, pilhas, árvores)</p>
+              <p>Lorem lorem lorem lorem</p>
+              <p>Lorem lorem lorem lorem</p>
+              <p>Lorem lorem lorem lorem</p>
+            </div>
+
+            <div className={sass.containerOne}>
+              <h2>Lógica e Estrutura de Dados</h2>
+
+              <p>Estruturas (listas, pilhas, árvores)</p>
+              <p>Lorem lorem lorem lorem</p>
+              <p>Lorem lorem lorem lorem</p>
+              <p>Lorem lorem lorem lorem</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      {/* <div className={sass.containerSofts}>
         <div className={sass.container}>
 
           <div className={sass.containerSoftsTexts}>
 
             <h2>&lt;/ Softs Skills</h2>
             <h3>Linguagens e Frameworks</h3>
-          </div>
+          </div> */}
 
-          <div className={sass.softsImgs}>
+      {/* <div className={sass.softsImgs}>
 
             <div className={sass.imgReact}
               onMouseEnter={() => setActiveSkill('react')}
@@ -126,9 +184,9 @@ function Sobre() {
               onMouseEnter={() => setActiveSkill('javascript')}
               onMouseLeave={() => setActiveSkill(null)}
             ></div>
-          </div>
+          </div> */}
 
-          <div className={sass.softsText}>
+      {/* <div className={sass.softsText}>
 
             {activeSkill ? (
               <>
@@ -152,6 +210,53 @@ function Sobre() {
               showCursor={true}
               cursorCharacter="|"
             />
+          </div> */}
+
+      {/* </div>
+      </div> */}
+
+      <div className={sass.containerSofts}>
+
+        <div className={sass.linha}>
+          <p>Ferramentas</p>
+        </div>
+
+        <div className={sass.containerSoftsSkills}>
+
+          <div className={sass.skills}>
+            <p>JavaScript</p>
+            <div className={sass.circle}></div>
+            <p>TypeScript</p>
+            <div className={sass.circle}></div>
+            <p>React</p>
+            <div className={sass.circle}></div>
+            <p>Sass</p>
+            <div className={sass.circle}></div>
+          </div>
+
+          <div className={sass.skillsOne}>
+            <p>PHP</p>
+            <div className={sass.circle}></div>
+            <p>mySQL</p>
+            <div className={sass.circle}></div>
+            <p>Git</p>
+            <div className={sass.circle}></div>
+          </div>
+
+          <div className={sass.projects}>
+
+            <div className={sass.teste}>
+              <TextType
+                text={[
+                  { content: "Veja mais:", link: "/projetos", target: "_self" },
+                  { content: "Meus Projetos", link: "/projetos", target: "_self" }
+                ]}
+                typingSpeed={75}
+                pauseDuration={1500}
+                showCursor={true}
+                cursorCharacter="|"
+              />
+            </div>
           </div>
 
         </div>

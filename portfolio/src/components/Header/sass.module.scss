@@ -12,6 +12,16 @@
     border: 1px solid rgb(225, 225, 225);
     border-bottom: none;
     padding: 1.5rem;
+    transition: .3s ease-in-out;
+
+    @media screen and (min-width: 320px) and (max-width: 880px) {
+        position: static;
+        background-color: rgba(239, 239, 239, 1);
+        z-index: 999;
+        // top: 6%;
+        // transform: translate(-50%, -50%);
+        // left: 50%;
+    }
 
     .containerHome {
         width: 20%;

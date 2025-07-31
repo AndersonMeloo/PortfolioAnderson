@@ -8,6 +8,7 @@
     border-top: none;
     display: flex;
     flex-direction: column;
+    transition: .3s ease-in-out;
 
     @media screen and (min-width: 320px) and (max-width: 800px) {
         height: 100vh;
@@ -15,9 +16,11 @@
 
     .containerApresentacao {
         width: 80%;
+        transition: .3s ease-in-out;
 
-        @media screen and (min-width: 320px) and (max-width: 900px) {
+        @media screen and (min-width: 320px) and (max-width: 880px) {
             width: 100%;
+            margin: 2rem 0 0;
         }
 
         h2 {
