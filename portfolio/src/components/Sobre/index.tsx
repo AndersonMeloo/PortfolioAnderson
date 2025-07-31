@@ -107,8 +107,8 @@ function Sobre() {
               <h2>Desenvolvimento Front-End</h2>
 
               <p>React</p>
-              <p>TypeScript & JavaScript</p>
-              <p>NodeJS</p>
+              <p>TypeScript</p>
+              <p>JavaScript</p>
               <p>Consumo de APIs REST</p>
 
             </div>
@@ -119,7 +119,7 @@ function Sobre() {
 
               <p>PHP</p>
               <p>MySQL</p>
-              <p>Lorem lorem lorem lorem</p>
+              <p>NodeJS</p>
               <p>Lorem lorem lorem lorem</p>
             </div>
           </div>
