@@ -120,7 +120,7 @@ const TextType = ({
   useEffect(() => {
     if (!isVisible) return;
 
-    let timeout: NodeJS.Timeout;
+   let timeout: ReturnType<typeof setTimeout>;
 
     const currentItem = textArray[currentTextIndex];
     const currentText = getTextContent(currentItem);
