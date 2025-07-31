@@ -84,12 +84,11 @@
                 position: relative;
                 bottom: 4rem;
                 left: 20px;
-
                 transition: .3s ease-in-out;
 
                 @media screen and (min-width: 320px) and (max-width: 800px) {
                     width: 140%;
-                    bottom: -2rem;
+                    bottom: 0;
                 }
             }
         }
