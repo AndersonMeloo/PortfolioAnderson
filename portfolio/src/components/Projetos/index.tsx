@@ -17,12 +17,12 @@ function Projetos() {
                 {/* <a href="#">Read More</a> */}
 
                 <div className={sass.containerIcons}>
-                  <a href="">
-                    <img src="imagens/icons/browser.png" alt="" />
+                  <a href="#">
+                    <img src="/imagens/icons/browser.png" alt="" />
                   </a>
 
-                  <a href="">
-                    <img src="imagens/icons/github.png" alt="" />
+                  <a href="https://github.com/AndersonMeloo" target='_blank'>
+                    <img src="/imagens/icons/github.png" alt="" />
                   </a>
                 </div>
 
