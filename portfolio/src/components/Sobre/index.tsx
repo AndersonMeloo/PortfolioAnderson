@@ -243,6 +243,8 @@ function Sobre() {
             <div className={sass.circle}></div>
             <p>Git</p>
             <div className={sass.circle}></div>
+            <p>MongoDB</p>
+            <div className={sass.circle}></div>
           </div>
 
           {/* <div className={sass.projects}>
