@@ -45,7 +45,7 @@ function Projetos() {
             <div className={sass.box}>
               <div className={sass.content}>
                 {/* <h2>03</h2> */}
-                <h3>Em breve</h3>
+                <h3>Em Breve</h3>
                 {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p> */}
                 {/* <a href="#">Read More</a> */}
               </div>

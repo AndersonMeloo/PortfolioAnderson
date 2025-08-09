@@ -11,7 +11,7 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        margin: 0 auto 1rem;
+        margin: 4rem auto 1rem;
 
         .card {
             position: relative;
@@ -99,6 +99,22 @@
                             cursor: pointer !important;
                         }
                     }
+                }
+            }
+
+            &:nth-child(2) {
+                .box {
+                    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("/imagens/comingSoon.webp");
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
+
+            &:nth-child(3) {
+                .box {
+                    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("/imagens/comingSoon.webp");
+                    background-position: center;
+                    background-size: cover;
                 }
             }
         }
