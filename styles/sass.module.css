@@ -1,0 +1,402 @@
+.containerSobre {
+  width: 90%;
+  padding: 2rem 1.5rem;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid rgb(225, 225, 225);
+  border-top: none;
+  border-bottom: none;
+}
+@media screen and (min-width: 320px) and (max-width: 800px) {
+  .containerSobre {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.containerSobre .containerEmail {
+  padding: 1.5rem;
+}
+.containerSobre .containerEmail .icon {
+  margin-bottom: 2rem;
+  color: #ff0000;
+  font-size: 1rem;
+  transform: rotate(0);
+  rotate: 180deg;
+  transition: transform 0.3s ease-in-out;
+}
+.containerSobre .containerEmail a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  border-bottom: 1px solid #c10528;
+  transition: 0.3s ease-in-out;
+}
+.containerSobre .containerEmail:hover .icon {
+  transform: rotate(360deg);
+}
+.containerSobre .container {
+  color: #e5e5e5;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 320px) and (max-width: 800px) {
+  .containerSobre .container {
+    font-size: 1rem;
+  }
+}
+.containerSobre .container p {
+  color: #000;
+  letter-spacing: 1px;
+  font-family: "Nunito", sans-serif;
+}
+.containerSobre .container .animation {
+  height: 30px;
+  overflow: hidden;
+  margin-left: 1rem;
+}
+@media screen and (min-width: 320px) and (max-width: 375px) {
+  .containerSobre .container .animation {
+    height: 40px;
+  }
+}
+.containerSobre .container .animation .textos {
+  font-size: 1rem;
+}
+.containerSobre .container .animation > div > div {
+  padding: 0.15rem 0.75rem;
+  height: 2.81rem;
+  margin-bottom: 2.81rem;
+  display: inline-block;
+}
+.containerSobre .container .animation .firts,
+.containerSobre .container .animation .second,
+.containerSobre .container .animation .third {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+.containerSobre .container .animation div:first-child {
+  animation: text-animation 8s infinite;
+}
+.containerSobre .container .animation .first div {
+  background-color: #20a7d8;
+}
+.containerSobre .container .animation .second div {
+  background-color: #000;
+}
+.containerSobre .container .animation .third div {
+  background-color: #c10528;
+}
+@keyframes text-animation {
+  0%, 10% {
+    margin-top: 0;
+  }
+  20%, 30% {
+    margin-top: -5.62rem;
+  }
+  40%, 60% {
+    margin-top: -11.24rem;
+  }
+  70%, 80% {
+    margin-top: -5.62rem;
+  }
+  90%, 100% {
+    margin-top: 0;
+  }
+}
+
+.containerApresentacao {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  border: 1px solid rgb(225, 225, 225);
+  position: relative;
+}
+.containerApresentacao .linha {
+  height: 19px;
+  width: 92%;
+  margin: 0 auto;
+  background-color: #000;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translate(-50%, -50%);
+}
+.containerApresentacao .linha p {
+  position: relative;
+  color: #fff;
+  left: 0;
+  bottom: 1.1rem;
+  font-family: "Nunito", sans-serif;
+  margin-left: 1rem;
+}
+.containerApresentacao .container {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  border: 1px solid rgb(225, 225, 225);
+  padding: 1.5rem;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 320px) and (max-width: 800px) {
+  .containerApresentacao .container {
+    flex-direction: column;
+  }
+}
+.containerApresentacao .container .containerTexto,
+.containerApresentacao .container .containerImagem {
+  width: 50%;
+  margin: 2rem 0;
+}
+.containerApresentacao .container .containerTexto {
+  margin-left: 3rem;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 320px) and (max-width: 1400px) {
+  .containerApresentacao .container .containerTexto {
+    width: 100%;
+    margin: 2rem 0 0;
+  }
+}
+.containerApresentacao .container .containerTexto p {
+  width: 60%;
+  font-family: "Montserrat", sans-serif;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 320px) and (max-width: 1400px) {
+  .containerApresentacao .container .containerTexto p {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.containerApresentacao .container .containerImagem {
+  display: flex;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 320px) and (max-width: 1400px) {
+  .containerApresentacao .container .containerImagem {
+    margin: 2rem auto 0;
+  }
+}
+.containerApresentacao .container .containerImagem img {
+  width: 50%;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+}
+@media screen and (min-width: 320px) and (max-width: 1400px) {
+  .containerApresentacao .container .containerImagem img {
+    width: 100%;
+  }
+}
+
+.containerSobreMim {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  border: 1px solid rgb(225, 225, 225);
+  border-right: 0;
+  border-left: 0;
+}
+.containerSobreMim .containerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  height: 120px;
+}
+.containerSobreMim .containerTitle p {
+  font-size: 4rem;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 400;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 320px) and (max-width: 900px) {
+  .containerSobreMim .containerTitle p {
+    font-size: 3rem;
+  }
+}
+.containerSobreMim .containerTitle .icon {
+  background-color: #000;
+  color: #fff;
+  padding: 0.4rem;
+  border-radius: 6px;
+  margin: 0 2rem;
+}
+
+.containerSofts {
+  width: 100%;
+  height: auto;
+  transition: 0.3s ease-in-out;
+}
+.containerSofts .container {
+  height: auto;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  border: 1px solid rgb(225, 225, 225);
+  border-bottom: 0;
+  border-top: 0;
+  display: flex;
+  position: relative;
+}
+@media screen and (min-width: 320px) and (max-width: 900px) {
+  .containerSofts .container {
+    flex-direction: column;
+  }
+}
+.containerSofts .container .containerSoftsTexts {
+  margin: 90%;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  top: 36%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 320px) and (max-width: 900px) {
+  .containerSofts .container .containerSoftsTexts {
+    position: static;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-top: 2rem;
+  }
+}
+.containerSofts .container .containerSoftsTexts h2,
+.containerSofts .container .containerSoftsTexts h3,
+.containerSofts .container .containerSoftsTexts p {
+  letter-spacing: 1px;
+}
+.containerSofts .container .containerSoftsTexts h2 {
+  font-family: "Nunito", sans-serif;
+  font-size: 2.4rem;
+  color: #4ea3c5;
+}
+.containerSofts .container .containerSoftsTexts h3 {
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: "Nunito", sans-serif;
+}
+.containerSofts .container .containerSoftsTexts p {
+  font-family: "Montserrat", sans-serif;
+}
+.containerSofts .container .softsImgs,
+.containerSofts .container .softsText {
+  width: 50%;
+  margin-top: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 320px) and (max-width: 900px) {
+  .containerSofts .container .softsImgs,
+  .containerSofts .container .softsText {
+    width: 100%;
+    margin: 0 auto 6rem;
+  }
+}
+.containerSofts .container .softsImgs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 320px) and (max-width: 399px) {
+  .containerSofts .container .softsImgs {
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 900px) {
+  .containerSofts .container .softsImgs {
+    padding: 1rem 0;
+    position: relative;
+    top: 2rem;
+  }
+}
+.containerSofts .container .softsImgs .imgReact,
+.containerSofts .container .softsImgs .imgTypeScript,
+.containerSofts .container .softsImgs .imgMySQL,
+.containerSofts .container .softsImgs .imgPhp,
+.containerSofts .container .softsImgs .imgJavaScript {
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  transition: 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.containerSofts .container .softsImgs .imgReact:hover,
+.containerSofts .container .softsImgs .imgTypeScript:hover,
+.containerSofts .container .softsImgs .imgMySQL:hover,
+.containerSofts .container .softsImgs .imgPhp:hover,
+.containerSofts .container .softsImgs .imgJavaScript:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.containerSofts .container .softsImgs .imgReact {
+  background-image: url("../imagens/icons/sciene.png");
+}
+.containerSofts .container .softsImgs .imgTypeScript {
+  background-image: url("../imagens/icons/typescript.png");
+}
+.containerSofts .container .softsImgs .imgMySQL {
+  background-image: url("../imagens/icons/icon-mysql-colorido.webp");
+}
+.containerSofts .container .softsImgs .imgPhp {
+  background-image: url("../imagens/icons/icon-php-colorido.png");
+}
+.containerSofts .container .softsImgs .imgJavaScript {
+  background-image: url("../imagens/icons/icon-javascript-colorido.png");
+  border-radius: 100%;
+}
+.containerSofts .container .animation {
+  position: absolute;
+  right: 16%;
+  top: 0;
+}
+.containerSofts .container .softsText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  bottom: 6rem;
+}
+@media screen and (min-width: 320px) and (max-width: 900px) {
+  .containerSofts .container .softsText {
+    bottom: 0;
+  }
+}
+.containerSofts .container .softsText h1 {
+  color: #4ea3c5;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+.containerSofts .container .softsText p {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  height: 100px;
+}

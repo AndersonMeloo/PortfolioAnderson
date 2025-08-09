@@ -86,7 +86,7 @@ function Sobre() {
           </div>
 
           <div className={sass.containerImagem}>
-            <img src="/imagens/andersonMelo.webp" alt="Foto de Anderson Melo" />
+            <img src="./imagens/andersonMelo.webp" alt="Foto Anderson Melo" />
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ function Sobre() {
               <p>PHP</p>
               <p>MySQL</p>
               <p>NodeJS</p>
-              <p>Lorem lorem lorem lorem</p>
+              <p>MongoDB</p>
             </div>
           </div>
 
