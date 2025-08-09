@@ -130,18 +130,18 @@ function Sobre() {
               <h2>Lógica e Estrutura de Dados</h2>
 
               <p>Estruturas (listas, pilhas, árvores)</p>
-              <p>Lorem lorem lorem lorem</p>
-              <p>Lorem lorem lorem lorem</p>
-              <p>Lorem lorem lorem lorem</p>
+              <p>Algoritmos otimizados</p>
+              <p>Resolução de problemas</p>
+              <p>Organização e legibilidade do código</p>
             </div>
 
             <div className={sass.containerOne}>
-              <h2>Lógica e Estrutura de Dados</h2>
+              <h2>Colaboração e Produto</h2>
 
-              <p>Estruturas (listas, pilhas, árvores)</p>
-              <p>Lorem lorem lorem lorem</p>
-              <p>Lorem lorem lorem lorem</p>
-              <p>Lorem lorem lorem lorem</p>
+              <p>Foco em entregas com valor real</p>
+              <p>Documentação e Git</p>
+              <p>Metodologias Ágeis (Scrum)</p>
+              <p>Integração com Design e Marketing</p>
             </div>
 
           </div>
