@@ -83,7 +83,7 @@ function Header() {
                             <li><Link to='/'>Home</Link></li>'  
 
                             <li className={sass.navLinks}>Redes Sociais</li>
-                            <li><a href="https://www.linkedin.com/in/anderson-melo-68010120a/" target='_blank' rel="noreferrer">Linkedin</a></li>
+                            <li><a href="https://www.linkedin.com/in/andersonrodriguesmelo/" target='_blank' rel="noreferrer">Linkedin</a></li>
                             <li><a href="https://github.com/AndersonMeloo" target='_blank' rel="noreferrer">GitHub</a></li>
 
                             <li className={sass.navLinks}>Contatos</li>
