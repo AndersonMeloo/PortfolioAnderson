@@ -89,7 +89,7 @@ function Header() {
                             <li className={sass.navLinks}>Contatos</li>
                             <li><a href="https://api.whatsapp.com/send/?phone=11988730794&BemVindo-DisponivelParaContratações" target='_blank' rel="noreferrer">Whatsapp</a></li>
                             <li><a href='mailto:andersonrodriguesmelo@hotmail.com'>Email</a></li>
-                            <li><a href="" target='_blank'>Currículo</a></li>
+                            <li><a href="/AndersonRodriguesMelo.pdf" target="_blank">Currículo</a></li>
                         </ul>
                     </nav>
 
@@ -120,7 +120,7 @@ function Header() {
                                 <Link to='/Projetos'>Projetos</Link>
                                 <Link to='/Sobre'>Sobre</Link>
                                 <a href="https://api.whatsapp.com/send/?phone=11988730794&BemVindo-DisponivelParaContratações" target='_blank' rel="noreferrer">Contato</a>
-                                <a href="" target='_blank'>Currículo</a>
+                                <a href="/AndersonRodriguesMelo.pdf" target='_blank'>Currículo</a>
                             </div>
                         </div>
                     </div>
