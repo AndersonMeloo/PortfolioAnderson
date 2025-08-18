@@ -98,6 +98,7 @@
                         h3 {
                             font-family: 'Nunito', sans-serif;
                             font-size: 1.2rem;
+                            font-weight: 900;
                             color: #fff;
                             z-index: 1;
                             transition: 0.5s;
@@ -107,8 +108,9 @@
                         p {
                             font-size: 1rem;
                             font-family: 'Montserrat', sans-serif;
-                            font-weight: 300;
+                            font-weight: 500;
                             color: rgba(255, 255, 255, 0.9);
+                            line-height: 1.5rem;
                             z-index: 1;
                             transition: 0.5s;
                         }
@@ -120,17 +122,33 @@
                             gap: 1rem;
                             position: relative;
                             top: 1rem;
+                            background-color: rgba(0, 0, 0, 0.6);
+                            border-radius: .4rem;
+                            padding: .2rem;
 
                             a {
                                 cursor: pointer !important;
+
+                                .iconGit {
+                                    color: #fff;
+                                }
                             }
                         }
                     }
                 }
 
+                &:nth-child(1) {
+                    .box {
+                        background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url("/imagens/supersesportivos.webp");
+                        background-position: center;
+                        background-size: cover;
+                        cursor: pointer;
+                    }
+                }
+
                 &:nth-child(2) {
                     .box {
-                        background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("/imagens/comingSoon.webp");
+                        background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url("/imagens/redeSolidaria.webp");
                         background-position: center;
                         background-size: cover;
                         cursor: pointer;
@@ -162,7 +180,7 @@
 
     h1,
     p {
-        font-size: 5rem;
+        font-size: 3rem;
         font-family: 'Montserrat', sans-serif;
         font-weight: 300;
         border: none;

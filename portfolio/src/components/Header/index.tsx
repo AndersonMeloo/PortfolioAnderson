@@ -80,7 +80,7 @@ function Header() {
                             <li className={sass.navLinks}>Navegar</li>
                             <li><Link to='/Sobre'>Sobre</Link></li>
                             <li><Link to='/Projetos'>Projetos</Link></li>
-                            <li><Link to='/'>Home</Link></li>'  
+                            <li><Link to='/'>Home</Link></li>'
 
                             <li className={sass.navLinks}>Redes Sociais</li>
                             <li><a href="https://www.linkedin.com/in/andersonrodriguesmelo/" target='_blank' rel="noreferrer">Linkedin</a></li>
@@ -89,7 +89,7 @@ function Header() {
                             <li className={sass.navLinks}>Contatos</li>
                             <li><a href="https://api.whatsapp.com/send/?phone=11988730794&BemVindo-DisponivelParaContratações" target='_blank' rel="noreferrer">Whatsapp</a></li>
                             <li><a href='mailto:andersonrodriguesmelo@hotmail.com'>Email</a></li>
-
+                            <li><a href="" target='_blank'>Currículo</a></li>
                         </ul>
                     </nav>
 
@@ -120,6 +120,7 @@ function Header() {
                                 <Link to='/Projetos'>Projetos</Link>
                                 <Link to='/Sobre'>Sobre</Link>
                                 <a href="https://api.whatsapp.com/send/?phone=11988730794&BemVindo-DisponivelParaContratações" target='_blank' rel="noreferrer">Contato</a>
+                                <a href="" target='_blank'>Currículo</a>
                             </div>
                         </div>
                     </div>

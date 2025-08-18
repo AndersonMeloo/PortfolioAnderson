@@ -17,36 +17,58 @@ function Projetos() {
           </div>
 
           <div className={sass.container}>
+
             <div className={sass.card}>
               <div className={sass.box}>
-
                 <div className={sass.content}>
-                  <h2></h2>
-                  <h3>Rede Solidaria</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
+                  {/* <h2>02</h2> */}
+                  <h3>SupersEsportivos</h3>
+                  <p>Tecnoligias usadas:
+                    React, TypeScript
+                    <br />
+                    MongoDB, Prisma
+                    <br />
+                    <br />
+                  </p>
                   {/* <a href="#">Read More</a> */}
-
                   <div className={sass.containerIcons}>
-                    <a href="#">
+                    <a href="https://supers-esportivos.vercel.app/" target="_blank">
                       <img src="/imagens/icons/browser.png" alt="" />
                     </a>
 
-                    <a href="https://github.com/AndersonMeloo/RedeSolidaria" target='_blank'>
-                      <img src="/imagens/icons/github.png" alt="" />
+                    <a href="https://github.com/AndersonMeloo/SupersEsportivos" target='_blank'>
+                      <Github size={30} className={sass.iconGit}/>
                     </a>
                   </div>
-
                 </div>
               </div>
             </div>
 
             <div className={sass.card}>
               <div className={sass.box}>
+
                 <div className={sass.content}>
-                  {/* <h2>02</h2> */}
-                  <h3>Em breve</h3>
-                  {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p> */}
+                  <h2></h2>
+                  <h3>Rede Solidaria</h3>
+                  <p>Tecnoligias usadas:
+                    React, TypeScript
+                    <br />
+                    PHP, mySQL
+                    <br />
+                    Em Andamento..
+                  </p>
                   {/* <a href="#">Read More</a> */}
+
+                  <div className={sass.containerIcons}>
+                    <a href="https://rede-solidaria.vercel.app/" target="_blank">
+                      <img src="/imagens/icons/browser.png" alt="" />
+                    </a>
+
+                    <a href="https://github.com/AndersonMeloo/RedeSolidaria" target='_blank'>
+                      {/* <img src="/imagens/icons/github.png" alt="" /> */}
+                      <Github size={30} className={sass.iconGit}/>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
