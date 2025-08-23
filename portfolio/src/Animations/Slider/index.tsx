@@ -12,8 +12,15 @@ function Slider({ children, duration = 25 }: SliderProps) {
 
         <>
             <div className={sass.containerSlider}>
-                <div className={sass.slide} style={{ animationDuration: `${duration}s` }}>
-                    {children}
+                <div className={sass.sliders}>
+                    <div className={sass.slide} style={{ animationDuration: `${duration}s` }}>
+                        {children}
+                    </div>
+                    <div className={sass.linha}></div>
+
+                    <div>
+                        {children}
+                    </div>
                 </div>
             </div >
         </>

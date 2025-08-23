@@ -273,6 +273,10 @@ function Sobre() {
               Mim</p>
             <Github className={sass.icon} />
             <p>Anderson Melo</p>
+
+            <p className={sass.removeText}>12</p>
+            <p className={sass.removeText}>12</p>
+
           </div>
         </Slider>
       </div>
