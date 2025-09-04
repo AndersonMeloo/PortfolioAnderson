@@ -568,11 +568,16 @@
     }
 
     .skillsOne {
-      margin-bottom: 2rem;
+      margin-bottom: 0;
+    }
+
+    .skillsTree {
+      padding: 0;
     }
 
     .skills,
-    .skillsOne {
+    .skillsOne,
+    .skillsTree {
       width: 70%;
       margin-left: auto;
       display: flex;
