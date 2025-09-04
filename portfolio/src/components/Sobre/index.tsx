@@ -245,10 +245,12 @@ function Sobre() {
             <div className={sass.circle}></div>
             <p>MongoDB</p>
             <div className={sass.circle}></div>
+          </div>
+
+          <div className={sass.skills}>
             <p>Tailwind</p>
             <div className={sass.circle}></div>
           </div>
-
           {/* <div className={sass.projects}>
 
             <div className={sass.teste}>
