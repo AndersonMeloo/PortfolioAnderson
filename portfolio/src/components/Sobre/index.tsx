@@ -247,7 +247,7 @@ function Sobre() {
             <div className={sass.circle}></div>
           </div>
 
-          <div className={sass.skills}>
+          <div className={sass.skillsTree}>
             <p>Tailwind</p>
             <div className={sass.circle}></div>
           </div>
