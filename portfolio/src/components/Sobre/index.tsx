@@ -107,6 +107,7 @@ function Sobre() {
               <h2>Desenvolvimento Front-End</h2>
 
               <p>React</p>
+              <p>Next</p>
               <p>TypeScript</p>
               <p>JavaScript</p>
               <p>Consumo de APIs REST</p>
@@ -243,12 +244,14 @@ function Sobre() {
             <div className={sass.circle}></div>
             <p>Git</p>
             <div className={sass.circle}></div>
-            <p>MongoDB</p>
+            <p>Next.js</p>
             <div className={sass.circle}></div>
           </div>
 
           <div className={sass.skillsTree}>
             <p>Tailwind</p>
+            <div className={sass.circle}></div>
+            <p>MongoDB</p>
             <div className={sass.circle}></div>
           </div>
           {/* <div className={sass.projects}>
