@@ -37,7 +37,7 @@ function Projetos() {
                     </a>
 
                     <a href="https://github.com/AndersonMeloo/SupersEsportivos" target='_blank'>
-                      <Github size={30} className={sass.iconGit}/>
+                      <Github size={30} className={sass.iconGit} />
                     </a>
                   </div>
                 </div>
@@ -66,7 +66,7 @@ function Projetos() {
 
                     <a href="https://github.com/AndersonMeloo/RedeSolidaria" target='_blank'>
                       {/* <img src="/imagens/icons/github.png" alt="" /> */}
-                      <Github size={30} className={sass.iconGit}/>
+                      <Github size={30} className={sass.iconGit} />
                     </a>
                   </div>
                 </div>
@@ -77,12 +77,27 @@ function Projetos() {
               <div className={sass.box}>
                 <div className={sass.content}>
                   {/* <h2>03</h2> */}
-                  <h3>Em Breve</h3>
-                  {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p> */}
-                  {/* <a href="#">Read More</a> */}
+                  <h3>FitScore</h3>
+                  <p>React, TypeScript
+                    MongoDB
+                    <br />
+                    Em Andamento... Style..
+                  </p>
+
+                  <div className={sass.containerIcons}>
+                    <a href="https://fit-score-kappa.vercel.app/" target="_blank">
+                      <img src="/imagens/icons/browser.png" alt="" />
+                    </a>
+
+                    <a href="https://github.com/AndersonMeloo/FitScore" target='_blank'>
+                      {/* <img src="/imagens/icons/github.png" alt="" /> */}
+                      <Github size={30} className={sass.iconGit} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
