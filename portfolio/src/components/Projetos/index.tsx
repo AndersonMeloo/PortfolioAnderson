@@ -26,8 +26,9 @@ function Projetos() {
                   <p>Tecnoligias usadas:
                     React, TypeScript
                     <br />
-                    MongoDB, Prisma
+                    MongoDB, Node.js
                     <br />
+                    Prisma
                     <br />
                   </p>
                   {/* <a href="#">Read More</a> */}
@@ -79,9 +80,9 @@ function Projetos() {
                   {/* <h2>03</h2> */}
                   <h3>FitScore</h3>
                   <p>React, TypeScript
-                    MongoDB
+                    MongoDB, Node.js
                     <br />
-                    Em Andamento... Style..
+                    Em Andamento... Styles..
                   </p>
 
                   <div className={sass.containerIcons}>
