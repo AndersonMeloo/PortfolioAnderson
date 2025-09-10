@@ -47,6 +47,34 @@ function Projetos() {
 
             <div className={sass.card}>
               <div className={sass.box}>
+                <div className={sass.content}>
+                  {/* <h2>03</h2> */}
+                  <h3>FitScore</h3>
+                  <p>
+                    Tecnoligias usadas:
+                    React, TypeScript
+                    MongoDB, Node.js
+                    <br />
+                    Prisma
+                    <br />
+                  </p>
+
+                  <div className={sass.containerIcons}>
+                    <a href="https://fit-score-kappa.vercel.app/" target="_blank">
+                      <img src="/imagens/icons/browser.png" alt="" />
+                    </a>
+
+                    <a href="https://github.com/AndersonMeloo/FitScore" target='_blank'>
+                      {/* <img src="/imagens/icons/github.png" alt="" /> */}
+                      <Github size={30} className={sass.iconGit} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={sass.card}>
+              <div className={sass.box}>
 
                 <div className={sass.content}>
                   <h2></h2>
@@ -66,31 +94,6 @@ function Projetos() {
                     </a>
 
                     <a href="https://github.com/AndersonMeloo/RedeSolidaria" target='_blank'>
-                      {/* <img src="/imagens/icons/github.png" alt="" /> */}
-                      <Github size={30} className={sass.iconGit} />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className={sass.card}>
-              <div className={sass.box}>
-                <div className={sass.content}>
-                  {/* <h2>03</h2> */}
-                  <h3>FitScore</h3>
-                  <p>React, TypeScript
-                    MongoDB, Node.js
-                    <br />
-                    Em Andamento... Styles..
-                  </p>
-
-                  <div className={sass.containerIcons}>
-                    <a href="https://fit-score-kappa.vercel.app/" target="_blank">
-                      <img src="/imagens/icons/browser.png" alt="" />
-                    </a>
-
-                    <a href="https://github.com/AndersonMeloo/FitScore" target='_blank'>
                       {/* <img src="/imagens/icons/github.png" alt="" /> */}
                       <Github size={30} className={sass.iconGit} />
                     </a>
