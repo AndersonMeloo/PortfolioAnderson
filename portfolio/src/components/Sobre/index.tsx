@@ -122,6 +122,7 @@ function Sobre() {
               <p>MySQL</p>
               <p>NodeJS</p>
               <p>MongoDB</p>
+              <p>PostgreSQL</p>
             </div>
           </div>
 
@@ -143,6 +144,16 @@ function Sobre() {
               <p>Documentação e Git</p>
               <p>Metodologias Ágeis (Scrum)</p>
               <p>Integração com Design e Marketing</p>
+
+              <h2>Arquitetura e Boas Práticas</h2>
+              <p>System Design:
+                <br />
+                (Planejamento e Estrutura de Sistemas)
+              </p>
+              <p>Design System:
+                <br />
+                (Componentes Reutilizáveis)
+              </p>
             </div>
 
           </div>
