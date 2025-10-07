@@ -3,6 +3,7 @@ import sass from './sass.module.scss'
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import '../../assets/sass/global.scss'
+import initCustomCursor from '../../utils/customCursor';
 
 type AvailableTheme = 'dark' | 'light'
 
@@ -32,6 +33,10 @@ function Header() {
         dark: <MoonIcon size={22} />,
         light: <SunIcon size={22} />
     }
+
+    useEffect(() => {
+        initCustomCursor(); // inicializa o cursor quando o header for montado
+    }, []);
 
     return (
         <>
