@@ -35,6 +35,10 @@ body::-webkit-scrollbar {
     transform: translate(-50%, -50%) scale(1);
     transition: background-color 0.35s ease, border-color 0.35s ease, transform 0.25s ease;
     z-index: 9999;
+
+    @media screen and (max-width: 1000px) {
+        display: none;
+    }
 }
 
 .cursor::after {
