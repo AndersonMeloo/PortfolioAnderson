@@ -270,6 +270,9 @@ function Sobre() {
             <p>PostgreSQL</p>
             <div className={sass.circle}></div>
           </div>
+
+           <div className={sass.skillsTree}><p>Docker</p>
+            <div className={sass.circle}></div></div>
           {/* <div className={sass.projects}>
 
             <div className={sass.teste}>
