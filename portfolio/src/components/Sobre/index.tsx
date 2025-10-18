@@ -154,6 +154,9 @@ function Sobre() {
                 <br />
                 (Componentes Reutilizáveis)
               </p>
+              <p>Containerização e Deploy:
+                <br />
+                Docker</p>
             </div>
 
           </div>
