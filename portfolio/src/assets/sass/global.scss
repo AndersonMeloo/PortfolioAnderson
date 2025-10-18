@@ -55,16 +55,14 @@ body::-webkit-scrollbar {
     transition: background-color 0.35s ease, width 0.25s ease, height 0.25s ease;
 }
 
-/* Muda a cor quando passa o cursor encima dos links */
 .cursor.fill {
-    background-color: #cfebf6;
-    border-color: #cfebf6;
+    background-color: rgba(90, 175, 209, 0.6);
+    border-color: rgba(90, 175, 209, 0.6);
     transform: translate(-50%, -50%);
 }
 
-/* Muda a cor quando passa o cursor encima dos links */
 .cursor.fill::after {
-    background-color: #cfebf6;
+    background-color: rgba(90, 175, 209, 0.6);
     width: 8px;
     height: 8px;
 }
