@@ -111,6 +111,10 @@ function Sobre() {
               <p>TypeScript</p>
               <p>JavaScript</p>
               <p>Consumo de APIs REST</p>
+              <p>Tailwind CSS</p>
+              <p>Shadcn</p>
+              <p>Styled Components</p>
+              <p>Sass</p>
 
             </div>
 
@@ -118,11 +122,17 @@ function Sobre() {
 
               <h2>Desenvolvimento Back-End</h2>
 
+              <p>NodeJS</p>
+              <p>Express/Fastify</p>
+              <p>Zod</p>
               <p>PHP</p>
               <p>MySQL</p>
-              <p>NodeJS</p>
               <p>MongoDB</p>
               <p>PostgreSQL</p>
+              <p>JWT</p>
+              <p>ORM</p>
+              <p>Prisma</p>
+
             </div>
           </div>
 
@@ -271,7 +281,7 @@ function Sobre() {
             <div className={sass.circle}></div>
           </div>
 
-           <div className={sass.skillsTree}><p>Docker</p>
+          <div className={sass.skillsTree}><p>Docker</p>
             <div className={sass.circle}></div></div>
           {/* <div className={sass.projects}>
 
