@@ -10,6 +10,7 @@
     a {
         position: relative;
         margin-left: 2rem;
+        padding: .4rem 2rem;
         width: 60%;
         text-align: center;
         text-decoration: none;
@@ -22,6 +23,10 @@
         overflow: hidden;
         transition: color .3s ease;
         transform: rotate(0);
+
+        @media (max-width: 375px) {
+             padding: .2rem 1rem;
+        }
 
         &::before {
             content: '';

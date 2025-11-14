@@ -268,8 +268,6 @@ function Sobre() {
             <div className={sass.circle}></div>
             <p>Git</p>
             <div className={sass.circle}></div>
-            <p>Next.js</p>
-            <div className={sass.circle}></div>
           </div>
 
           <div className={sass.skillsTree}>
@@ -282,7 +280,11 @@ function Sobre() {
           </div>
 
           <div className={sass.skillsTree}><p>Docker</p>
-            <div className={sass.circle}></div></div>
+            <div className={sass.circle}></div>
+            <p>Next.js</p>
+            <div className={sass.circle}></div>
+          </div>
+
           {/* <div className={sass.projects}>
 
             <div className={sass.teste}>
