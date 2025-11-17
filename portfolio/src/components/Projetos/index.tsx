@@ -1,6 +1,8 @@
 import { Github } from "lucide-react";
 import Slider from "../../Animations/Slider";
 import sass from "./sass.module.scss";
+// import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+// import { Card, CardContent } from "../ui/card";
 
 function Projetos() {
 
@@ -101,6 +103,30 @@ function Projetos() {
                 </div>
               </div>
             </div>
+
+            {/* SHADCN */}
+            {/* <Carousel className="w-full max-w-sm">
+              <CarouselContent className="-ml-1">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
+
+                    <div className="p-1">
+                      <Card>
+                        <CardContent className="flex aspect-square items-center justify-center p-30">
+                          <span className="text-2xl font-semibold">{index + 1}</span>
+                        </CardContent>
+                        SupersEsportivos
+                        Tecnoligias usadas: React, TypeScript
+                        MongoDB, Node.js
+                        Prisma
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel> */}
 
           </div>
         </div>
