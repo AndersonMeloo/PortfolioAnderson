@@ -309,7 +309,7 @@ function Sobre() {
           <div className={sass.containerTitle}>
             <p>Sobre
               Mim</p>
-            <Github className={sass.icon} />
+            <Github size={40} className={sass.icon} />
             <p>Anderson Melo</p>
 
             <p className={sass.removeText}>12</p>
