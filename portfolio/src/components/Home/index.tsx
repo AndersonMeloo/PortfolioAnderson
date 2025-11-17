@@ -50,7 +50,7 @@ function Home() {
                 <div className={sass.containerTitleSlide}>
                     <h2>Anderson Rodrigues de Melo
                         <span>
-                            <Github className={sass.containerGitHub} />
+                            <Github size={40} className={sass.containerGitHub} />
                         </span>
                         Desenvolvedor Full Stack</h2>
                 </div>
