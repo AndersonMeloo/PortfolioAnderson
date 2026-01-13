@@ -133,6 +133,7 @@ function Sobre() {
               <p>ORM</p>
               <p>Prisma</p>
               <p>Nest.js</p>
+              <p>TypeORM</p>
             </div>
           </div>
 
@@ -284,6 +285,8 @@ function Sobre() {
             <p>Next.js</p>
             <div className={sass.circle}></div>
             <p>Nest.js</p>
+            <div className={sass.circle}></div>
+            <p>TypeORM</p>
           </div>
 
           {/* <div className={sass.projects}>
