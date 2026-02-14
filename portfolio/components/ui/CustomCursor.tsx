@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -12,6 +13,15 @@ export default function CustomCursor() {
   });
 
   const [isHovering, setIsHovering] = useState(false);
+  const pathname = usePathname();
+
+  const recentClick = useRef(false);
+  const clickTimeout = useRef<number | null>(null);
+
+  useEffect(() => {
+    // Reset hover state on route change (Next.js navigation)
+    setIsHovering(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (!enabled) return;
@@ -33,15 +43,55 @@ export default function CustomCursor() {
     const addHover = () => setIsHovering(true);
     const removeHover = () => setIsHovering(false);
 
-    window.addEventListener('mousemove', move);
+    const onOver = (e: Event) => {
+      const target = e.target as Element | null;
+      if (!target) return;
+      if (recentClick.current) return;
+      const el = target.closest('a, button');
+      if (el) addHover();
+    };
 
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', addHover);
-      el.addEventListener('mouseleave', removeHover);
-    });
+    const onOut = (e: Event) => {
+      const target = e.target as Element | null;
+      if (!target) return;
+
+      const from = target.closest('a, button');
+      // If we didn't come from an interactive element, ignore
+      if (!from) return;
+
+      const related = (e as MouseEvent).relatedTarget as Element | null;
+      // If the related target is still inside the same interactive element, don't remove hover
+      if (related && related.closest && related.closest('a, button') === from) return;
+
+      removeHover();
+    };
+
+    window.addEventListener('mousemove', move);
+    document.addEventListener('mouseover', onOver);
+    document.addEventListener('mouseout', onOut);
+    document.addEventListener('mousedown', removeHover);
+    document.addEventListener('touchstart', removeHover, { passive: true });
+    const onClick = () => {
+      removeHover();
+      recentClick.current = true;
+      if (clickTimeout.current) window.clearTimeout(clickTimeout.current);
+      clickTimeout.current = window.setTimeout(() => {
+        recentClick.current = false;
+        clickTimeout.current = null;
+      }, 250);
+    };
+    document.addEventListener('click', onClick);
+    document.addEventListener('pointerdown', onClick);
 
     return () => {
       window.removeEventListener('mousemove', move);
+      document.removeEventListener('mouseover', onOver);
+      document.removeEventListener('mouseout', onOut);
+      document.removeEventListener('mousedown', removeHover);
+      document.removeEventListener('touchstart', removeHover);
+      document.removeEventListener('click', onClick);
+      document.removeEventListener('pointerdown', onClick);
+      if (clickTimeout.current) window.clearTimeout(clickTimeout.current);
       if (raf.current) cancelAnimationFrame(raf.current);
     };
   }, [enabled]);
