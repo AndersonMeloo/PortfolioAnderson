@@ -92,6 +92,7 @@ function Sobre() {
                                 <span>Shadcn</span>
                                 <span>Styled Components</span>
                                 <span>Sass</span>
+                                <span>Consumo de APIs</span>
                             </div>
                         </div>
 
