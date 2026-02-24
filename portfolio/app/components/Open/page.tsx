@@ -56,12 +56,12 @@ function Open() {
                                 </span>
 
                             </Link> */}
-                          <Link
-  href="/Anderson-Rodrigues-de-Melo-Desenvolvedor-Fullstack.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="group inline-flex items-center gap-2 text-white bg-black py-4 px-8 border border-white/30 rounded-4xl transition-all duration-200 ease-in-out hover:bg-white hover:text-black hover:scale-[1.03] mt-4"
->
+                            <Link
+                                href="https://portfolio-anderson-nine.vercel.app/Anderson-Rodrigues-de-Melo-Desenvolvedor-Fullstack.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group inline-flex items-center gap-2 text-white bg-black py-4 px-8 border border-white/30 rounded-4xl transition-all duration-200 ease-in-out hover:bg-white hover:text-black hover:scale-[1.03] mt-4"
+                            >
                                 <span className="transition-opacity duration-200 group-hover:opacity-0">
                                     ●
                                 </span>
