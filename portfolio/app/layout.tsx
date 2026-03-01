@@ -7,6 +7,7 @@ import CustomCursor from "@/components/ui/CustomCursor";
 import Home from "./components/Home/page";
 import DotsNavigation from "@/components/ui/DotsNavigation";
 import NavMenu from "@/components/ui/NavMenu";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,6 +75,10 @@ export default function RootLayout({
 
           <Home />
           <DotsNavigation />
+
+          <div className="relative z-9999">
+            <ScrollToTop />
+          </div>
         </div>
       </body>
 
