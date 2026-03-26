@@ -30,7 +30,7 @@ function Open() {
                             </div>
 
                             <span className="text-white text-2xl font-montserrat">
-                                Engenheiro de Software
+                                Desenvolvedor Fullstack
                             </span>
 
                             <p className="text-white font-nunito">Disponível para oportunidades • Aberto a novos projetos</p>
