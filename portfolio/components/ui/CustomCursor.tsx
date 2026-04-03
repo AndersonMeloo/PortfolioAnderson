@@ -106,7 +106,7 @@ export default function CustomCursor() {
         fixed
         left-0
         top-0
-        z-[9999]
+        z-[10000]
         rounded-full
         border
         border-white

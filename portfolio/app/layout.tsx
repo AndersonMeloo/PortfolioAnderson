@@ -76,7 +76,7 @@ export default function RootLayout({
           <Home />
           <DotsNavigation />
 
-          <div className="relative z-9999">
+          <div className="relative z-9998">
             <ScrollToTop />
           </div>
         </div>
