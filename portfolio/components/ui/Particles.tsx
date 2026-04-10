@@ -135,11 +135,27 @@ const Particles: React.FC<ParticlesProps> = ({
     const resize = () => {
       const width = container.clientWidth;
       const height = container.clientHeight;
+
+      if (width === 0 || height === 0) return;
+
       renderer.setSize(width, height);
       camera.perspective({ aspect: gl.canvas.width / gl.canvas.height });
     };
     window.addEventListener('resize', resize, false);
     resize();
+
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(container);
+
+    const handleWindowLoad = () => resize();
+    window.addEventListener('load', handleWindowLoad);
+
+    let fontReadyCancelled = false;
+    if (typeof document !== 'undefined' && 'fonts' in document) {
+      document.fonts.ready.then(() => {
+        if (!fontReadyCancelled) resize();
+      });
+    }
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = container.getBoundingClientRect();
@@ -228,6 +244,9 @@ const Particles: React.FC<ParticlesProps> = ({
 
     return () => {
       window.removeEventListener('resize', resize);
+      window.removeEventListener('load', handleWindowLoad);
+      resizeObserver.disconnect();
+      fontReadyCancelled = true;
       if (moveParticlesOnHover) {
         container.removeEventListener('mousemove', handleMouseMove);
       }
