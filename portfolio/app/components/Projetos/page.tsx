@@ -32,6 +32,113 @@ function Projetos() {
                         <div className="flex-1 h-px bg-white/30"></div>
                     </div>
 
+                    <p className="text-6xl min-[320px]:max-[375px]:text-[3rem] mt-2 font-bold font-nunito">Post <br /> Automation</p>
+
+                    <div className="w-full flex flex-row gap-6 items-center mt-10 max-[1110px]:flex-col">
+
+                        <div className="w-[60%] max-[1110px]:w-full">
+                            <Image
+                                src="/PostAutomation.png"
+                                alt="Imagem E-commerce"
+                                width={0}
+                                height={0}
+                                sizes="100vw"
+                                className="w-full h-auto rounded-3xl"
+                                quality={100}
+                            />
+                        </div>
+
+                        <div className="h-100 w-[30%] max-[1110px]:w-full">
+
+                            {openProject !== 1 ? (
+                                <>
+                                    <h2 className="text-[20px] tracking-wider mb-4 font-mono">Tecnologias</h2>
+
+                                    <div className="flex gap-2 ml-2 text-[11px] flex-wrap tracking-wider font-mono">
+                                        {[
+                                            "NestJS",
+                                            "Prisma",
+                                            "PostgreSQL",
+                                            "Google APIs",
+                                            "Schedule/Cron",
+                                            "JWT",
+                                            "Docker",
+                                            "Next.js",
+                                            "React",
+                                            "TypeScript",
+                                            "Tailwind CSS",
+                                        ].map((tech) => (
+                                            <p
+                                                key={tech}
+                                                className="border border-white/40 rounded-full py-1.5 px-3 font-bold bg-neutral-500/30"
+                                            >
+                                                {tech}
+                                            </p>
+                                        ))}
+                                    </div>
+
+                                    <div className="mt-6 flex flex-col gap-3 w-full">
+                                        <p className="font-bold font-nunito">Links</p>
+
+                                        <Link
+                                            href="https://github.com/AndersonMeloo/PostAutomation"
+                                            target="_blank"
+                                            className="flex items-center justify-center gap-3 py-2 border rounded-lg text-white font-bold hover:scale-[1.02] font-roboto"
+                                        >
+                                            <SiGithub size={20} />
+                                            Code
+                                        </Link>
+
+                                        <Link
+                                            href=""
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setOpenProject(1);
+                                            }}
+                                            className="flex items-center justify-center gap-3 py-2 border rounded-lg bg-white text-black hover:scale-[1.02] font-montserrat"
+                                        >
+                                            Ver detalhes
+                                            <FiArrowRight size={12} />
+                                        </Link>
+                                    </div>
+                                </>
+                            ) : (
+                                <div className="flex flex-col gap-4">
+                                    <h3 className="text-xl font-bold font-montserrat">Sobre o projeto</h3>
+
+                                    <p className="text-white/80 text-[13px] leading-relaxed font-montserrat">
+                                        Este projeto realiza um fluxo real de auditoria técnica de páginas web, desde a coleta do conteúdo de uma URL até a validação completa de SEO, HTML e CSS, reproduzindo um cenário próximo ao de uma análise profissional de qualidade e conformidade para sites em produção.
+                                    </p>
+
+                                    <p className="text-white/80 text-sm leading-relaxed text-[13px] font-montserrat">
+                                        O usuário pode informar qualquer endereço, executar a análise e acompanhar o resultado de forma dinâmica, com pontuação de SEO, lista de problemas encontrados, nível de severidade e sugestões práticas para correção de estrutura, metadados e padrões de marcação.
+                                    </p>
+
+                                    <p className="text-white/80 text-sm leading-relaxed text-[13px] font-montserrat">
+                                        A aplicação integra backend e frontend para entregar respostas rápidas e confiáveis, utilizando cache em memória, processamento paralelo e validadores oficiais da W3C, permitindo uma visão clara da saúde técnica da página e dos pontos que exigem melhoria imediata.
+                                    </p>
+
+
+                                    <button
+                                        onClick={() => setOpenProject(null)}
+                                        className="mt-4 py-2 border rounded-lg bg-white text-black hover:scale-[1.02] flex items-center justify-center gap-2 font-montserrat font-medium"
+                                    >
+                                        <FiArrowLeft size={16} />
+                                        Voltar
+                                    </button>
+                                </div>
+                            )}
+
+                        </div>
+                    </div>
+                </div>
+                {/* <div className="w-[80%] flex flex-col gap-4">
+
+                    <div className="flex items-center gap-6">
+                        <h2 className="text-8xl font-numbers">01</h2>
+                        <div className="flex-1 h-px bg-white/30"></div>
+                    </div>
+
                     <p className="text-6xl mt-2 font-bold font-nunito">E-commerce</p>
 
                     <div className="w-full flex flex-row gap-6 items-center mt-10 max-[1110px]:flex-col">
@@ -127,10 +234,113 @@ function Projetos() {
 
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* ================= PROJETO 02 ================= */}
+
                 <div className="w-[80%] flex flex-col gap-4 mt-40">
+
+                    <div className="flex items-center gap-6">
+                        <h2 className="text-8xl font-bold font-numbers">02</h2>
+                        <div className="flex-1 h-px bg-white/30"></div>
+                    </div>
+
+                    <p className="text-6xl min-[320px]:max-[375px]:text-[3rem] mt-2 font-bold font-nunito">WebAudit</p>
+
+                    <div className="w-full flex flex-row gap-6 items-center mt-10 max-[1110px]:flex-col">
+
+                        <div className="w-[60%] max-[1110px]:w-full">
+                            <Image
+                                src="/WebAudit.png"
+                                alt="Imagem Supers Esportivos"
+                                width={0}
+                                height={0}
+                                sizes="100vw"
+                                className="w-full h-auto rounded-3xl"
+                                quality={100}
+                            />
+                        </div>
+
+                        <div className="h-100 w-[30%] max-[1110px]:w-full">
+
+                            {openProject !== 2 ? (
+                                <>
+                                    <h2 className="text-[20px] tracking-wider mb-4 font-mono">Tecnologias</h2>
+
+                                    <div className="flex gap-2 ml-2 text-[11px] flex-wrap tracking-wider font-mono">
+                                        {[
+                                            "Next.js",
+                                            "React",
+                                            "TypeScript",
+                                            "CSS (Global)",
+                                            "NestJS",
+                                            "Axios",
+                                            "W3C APIs",
+                                            "Cheerio"
+                                        ].map((tech) => (
+                                            <p key={tech} className="border border-white/40 rounded-full py-1.5 px-3 font-bold bg-neutral-500/30">
+                                                {tech}
+                                            </p>
+                                        ))}
+                                    </div>
+
+                                    <div className="mt-6 flex flex-col gap-3 w-full">
+                                        <p className="font-bold font-nunito">Links</p>
+
+                                        <Link
+                                            href="https://github.com/AndersonMeloo/WebAudit"
+                                            target="_blank"
+                                            className="flex items-center justify-center gap-3 py-2 border rounded-lg text-white font-bold hover:scale-[1.02] font-roboto"
+                                        >
+                                            <SiGithub size={20} />
+                                            Code
+                                        </Link>
+
+                                        <Link
+                                            href=""
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setOpenProject(2);
+                                            }}
+                                            className="flex items-center justify-center gap-3 py-2 border rounded-lg bg-white text-black hover:scale-[1.02] font-montserrat"
+                                        >
+                                            Ver detalhes
+                                            <FiArrowRight size={12} />
+                                        </Link>
+                                    </div>
+                                </>
+                            ) : (
+                                <div className="flex flex-col gap-4">
+                                    <h3 className="text-xl font-bold font-montserrat">Sobre o projeto</h3>
+
+                                    <p className="text-white/80 text-sm leading-relaxed text-[13px] font-montserrat">
+                                        Este projeto consiste em um catálogo de carros superesportivos, onde é possível cadastrar veículos com imagem e informações detalhadas, simulando um sistema real de gerenciamento de anúncios.
+                                    </p>
+
+                                    <p className="text-white/80 text-sm leading-relaxed text-[13px] font-montserrat">
+                                        O usuário pode adicionar novos carros, visualizar todos os registros cadastrados e remover itens, mantendo o controle completo sobre os dados exibidos na aplicação.
+                                    </p>
+
+                                    <p className="text-white/80 text-sm leading-relaxed text-[13px] font-montserrat">
+                                        A proposta do projeto é reproduzir um cenário próximo ao de plataformas automotivas reais, com foco em organização, clareza das informações e facilidade de uso.
+                                    </p>
+
+
+                                    <button
+                                        onClick={() => setOpenProject(null)}
+                                        className="mt-4 py-2 border rounded-lg bg-white text-black hover:scale-[1.02] flex items-center justify-center gap-2 font-montserrat font-medium"
+                                    >
+                                        <FiArrowLeft size={16} />
+                                        Voltar
+                                    </button>
+                                </div>
+                            )}
+
+                        </div>
+                    </div>
+                </div>
+
+                {/* <div className="w-[80%] flex flex-col gap-4 mt-40">
 
                     <div className="flex items-center gap-6">
                         <h2 className="text-8xl font-bold font-numbers">02</h2>
@@ -230,7 +440,7 @@ function Projetos() {
 
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* ================= PROJETO 03 ================= */}
                 <div className="w-[80%] flex flex-col gap-4 mt-40">
@@ -240,7 +450,7 @@ function Projetos() {
                         <div className="flex-1 h-px bg-white/30"></div>
                     </div>
 
-                    <p className="text-6xl mt-2 font-bold font-nunito">Clima Tempo</p>
+                    <p className="text-6xl min-[320px]:max-[375px]:text-[3rem] mt-2 font-bold font-nunito">Clima Tempo</p>
 
                     <div className="w-full flex flex-row gap-6 items-center mt-10 max-[1110px]:flex-col">
 
