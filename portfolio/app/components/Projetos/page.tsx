@@ -107,15 +107,15 @@ function Projetos() {
                                     <h3 className="text-xl font-bold font-montserrat">Sobre o projeto</h3>
 
                                     <p className="text-white/80 text-[13px] leading-relaxed font-montserrat">
-                                        Este projeto realiza um fluxo real de auditoria técnica de páginas web, desde a coleta do conteúdo de uma URL até a validação completa de SEO, HTML e CSS, reproduzindo um cenário próximo ao de uma análise profissional de qualidade e conformidade para sites em produção.
+                                        Este projeto automatiza um fluxo real de publicação de vídeos curtos, desde o envio e organização dos arquivos até o agendamento no horário ideal, reproduzindo um cenário próximo ao de uma operação profissional de conteúdo digital.
                                     </p>
 
                                     <p className="text-white/80 text-sm leading-relaxed text-[13px] font-montserrat">
-                                        O usuário pode informar qualquer endereço, executar a análise e acompanhar o resultado de forma dinâmica, com pontuação de SEO, lista de problemas encontrados, nível de severidade e sugestões práticas para correção de estrutura, metadados e padrões de marcação.
+                                        O usuário pode cadastrar nichos, gerenciar posts e acompanhar o status de cada publicação, além de visualizar métricas como visualizações, curtidas e comentários de forma dinâmica.
                                     </p>
 
                                     <p className="text-white/80 text-sm leading-relaxed text-[13px] font-montserrat">
-                                        A aplicação integra backend e frontend para entregar respostas rápidas e confiáveis, utilizando cache em memória, processamento paralelo e validadores oficiais da W3C, permitindo uma visão clara da saúde técnica da página e dos pontos que exigem melhoria imediata.
+                                        A aplicação possui autenticação e áreas protegidas, permitindo acesso ao painel, integrações e dados da conta apenas para usuários autorizados e com conexão ativa ao Google/YouTube.
                                     </p>
 
 
@@ -313,18 +313,17 @@ function Projetos() {
                                 <div className="flex flex-col gap-4">
                                     <h3 className="text-xl font-bold font-montserrat">Sobre o projeto</h3>
 
-                                    <p className="text-white/80 text-sm leading-relaxed text-[13px] font-montserrat">
-                                        Este projeto consiste em um catálogo de carros superesportivos, onde é possível cadastrar veículos com imagem e informações detalhadas, simulando um sistema real de gerenciamento de anúncios.
+                                    <p className="text-white/80 text-[13px] leading-relaxed font-montserrat">
+                                        Este projeto realiza um fluxo real de auditoria técnica de páginas web, desde a coleta do conteúdo de uma URL até a validação completa de SEO, HTML e CSS, reproduzindo um cenário próximo ao de uma análise profissional de qualidade e conformidade para sites em produção.
                                     </p>
 
                                     <p className="text-white/80 text-sm leading-relaxed text-[13px] font-montserrat">
-                                        O usuário pode adicionar novos carros, visualizar todos os registros cadastrados e remover itens, mantendo o controle completo sobre os dados exibidos na aplicação.
+                                        O usuário pode informar qualquer endereço, executar a análise e acompanhar o resultado de forma dinâmica, com pontuação de SEO, lista de problemas encontrados, nível de severidade e sugestões práticas para correção de estrutura, metadados e padrões de marcação.
                                     </p>
 
                                     <p className="text-white/80 text-sm leading-relaxed text-[13px] font-montserrat">
-                                        A proposta do projeto é reproduzir um cenário próximo ao de plataformas automotivas reais, com foco em organização, clareza das informações e facilidade de uso.
+                                        A aplicação integra backend e frontend para entregar respostas rápidas e confiáveis, utilizando cache em memória, processamento paralelo e validadores oficiais da W3C, permitindo uma visão clara da saúde técnica da página e dos pontos que exigem melhoria imediata.
                                     </p>
-
 
                                     <button
                                         onClick={() => setOpenProject(null)}
