@@ -314,15 +314,15 @@ function Projetos() {
                                     <h3 className="text-xl font-bold font-montserrat">Sobre o projeto</h3>
 
                                     <p className="text-white/80 text-[13px] leading-relaxed font-montserrat">
-                                        Este projeto realiza um fluxo real de auditoria técnica de páginas web, desde a coleta do conteúdo de uma URL até a validação completa de SEO, HTML e CSS, reproduzindo um cenário próximo ao de uma análise profissional de qualidade e conformidade para sites em produção.
+                                        Este sistema realiza auditoria técnica de páginas web, da coleta do conteúdo de uma URL até a validação de SEO, HTML e CSS, simulando uma análise profissional de qualidade e conformidade.
                                     </p>
 
                                     <p className="text-white/80 text-sm leading-relaxed text-[13px] font-montserrat">
-                                        O usuário pode informar qualquer endereço, executar a análise e acompanhar o resultado de forma dinâmica, com pontuação de SEO, lista de problemas encontrados, nível de severidade e sugestões práticas para correção de estrutura, metadados e padrões de marcação.
+                                        O usuário pode inserir um endereço, executar a análise e acompanhar os resultados com score de SEO, problemas encontrados, nível de severidade e sugestões práticas de correção.
                                     </p>
 
                                     <p className="text-white/80 text-sm leading-relaxed text-[13px] font-montserrat">
-                                        A aplicação integra backend e frontend para entregar respostas rápidas e confiáveis, utilizando cache em memória, processamento paralelo e validadores oficiais da W3C, permitindo uma visão clara da saúde técnica da página e dos pontos que exigem melhoria imediata.
+                                        A aplicação integra backend e frontend, utilizando cache em memória, processamento paralelo e validadores da W3C para fornecer uma visão clara da saúde técnica da página.
                                     </p>
 
                                     <button
