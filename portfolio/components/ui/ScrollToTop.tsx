@@ -7,20 +7,34 @@ export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    let rafId: number | null = null;
+
     const updateScroll = () => {
+      if (rafId !== null) return;
+
+      rafId = window.requestAnimationFrame(() => {
+        rafId = null;
+
       const scrollHeight = document.documentElement.scrollHeight;
       const clientHeight = document.documentElement.clientHeight;
       const scrollTop = window.scrollY;
-      
+
       const totalScrollable = scrollHeight - clientHeight;
-      
+
       if (totalScrollable <= 0) return;
 
       const currentProgress = (scrollTop / totalScrollable) * 100;
-      
+
+      const roundedProgress = Math.round(currentProgress);
+
       // Arredonda para não mostrar casas decimais
-      setProgress(Math.round(currentProgress));
-      setIsVisible(currentProgress > 5);
+      setProgress((previousProgress) => (
+        previousProgress === roundedProgress ? previousProgress : roundedProgress
+      ));
+      setIsVisible((previousVisible) => (
+        previousVisible === (currentProgress > 5) ? previousVisible : currentProgress > 5
+      ));
+      });
     };
 
     window.addEventListener("scroll", updateScroll, { passive: true });
@@ -30,6 +44,9 @@ export default function ScrollToTop() {
     return () => {
       window.removeEventListener("scroll", updateScroll);
       window.removeEventListener("resize", updateScroll);
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
     };
   }, []);
 
@@ -43,7 +60,7 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-10 right-10 z-[9998] flex h-14 w-14 items-center justify-center rounded-full bg-black/80 backdrop-blur-xl  transition-all duration-500 hover:scale-110 active:scale-95 ${
+      className={`fixed bottom-10 right-10 z-[9998] flex h-14 w-14 items-center justify-center rounded-full bg-black/85 transition-all duration-500 hover:scale-110 active:scale-95 ${
         isVisible 
           ? "translate-y-0 opacity-100 scale-100" 
           : "translate-y-20 opacity-0 scale-50 pointer-events-none"

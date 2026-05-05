@@ -14,34 +14,55 @@ export default function DotsNavigation() {
   const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSection = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    let rafId: number | null = null;
 
-        if (visibleSection) {
-          setActiveSection(visibleSection.target.id);
+    const updateActiveSection = () => {
+      if (rafId !== null) return;
+
+      rafId = window.requestAnimationFrame(() => {
+        rafId = null;
+
+        const marker = window.innerHeight * 0.35;
+        let nextSection = sections[0]?.id ?? "";
+
+        for (const { id } of sections) {
+          const element = document.getElementById(id);
+          if (!element) continue;
+
+          const rect = element.getBoundingClientRect();
+
+          if (rect.top <= marker) {
+            nextSection = id;
+          }
         }
-      },
-      {
-        threshold: Array.from({ length: 101 }, (_, i) => i / 100),
+
+        setActiveSection((currentSection) => (
+          currentSection === nextSection ? currentSection : nextSection
+        ));
+      });
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
       }
-    );
-
-    sections.forEach(({ id }) => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
-    });
-
-    return () => observer.disconnect();
+    };
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(id);
+      if (id !== activeSection) {
+        setActiveSection(id);
+      }
     }
   };
 

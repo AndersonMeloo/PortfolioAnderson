@@ -16,7 +16,7 @@ export default function NavMenu() {
   };
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 inset-x-0 z-50 bg-black/80 border-b border-white/10">
       <nav className="flex justify-center gap-6 p-4 text-sm min-[320px]:max-[375px]:text-[0.8rem]">
         {links.map((link) => (
           <button

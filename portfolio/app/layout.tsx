@@ -68,7 +68,14 @@ export default function RootLayout({
   `}
       >
         <div className="relative min-h-screen">
-          <Particles className="absolute inset-0 -z-10" />
+          <Particles
+            className="absolute inset-0 -z-10"
+            particleCount={7000}
+            particleSpread={10}
+            speed={0.008}
+            disableRotation
+            pixelRatio={0.75}
+          />
           <CustomCursor />
           <NavMenu />
           {children}

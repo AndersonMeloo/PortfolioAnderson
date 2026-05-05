@@ -25,30 +25,32 @@ function Projetos() {
                 </div>
 
                 {/* ================= PROJETO 01 ================= */}
-                <div className="w-[80%] flex flex-col gap-4">
+                <div className="w-[90%] max-w-7xl flex flex-col gap-4">
 
                     <div className="flex items-center gap-6">
                         <h2 className="text-8xl font-numbers">01</h2>
                         <div className="flex-1 h-px bg-white/30"></div>
                     </div>
 
-                    <p className="text-6xl min-[320px]:max-[375px]:text-[3rem] mt-2 font-bold font-nunito">Post <br /> Automation</p>
+                    <p className="mt-2 text-4xl sm:text-5xl lg:text-6xl leading-tight font-bold font-nunito">
+                        Post <br /> Automation
+                    </p>
 
-                    <div className="w-full flex flex-row gap-6 items-center mt-10 max-[1110px]:flex-col">
+                    <div className="mt-10 flex w-full flex-row items-start gap-6 max-[1110px]:flex-col">
 
-                        <div className="w-[60%] max-[1110px]:w-full">
+                        <div className="w-[60%] min-w-0 max-[1110px]:w-full">
                             <Image
                                 src="/PostAutomation.png"
                                 alt="Imagem E-commerce"
-                                width={0}
-                                height={0}
+                                width={1600}
+                                height={900}
                                 sizes="100vw"
                                 className="w-full h-auto rounded-3xl"
                                 quality={100}
                             />
                         </div>
 
-                        <div className="h-100 w-[30%] max-[1110px]:w-full">
+                        <div className="h-100 w-[30%] min-w-0 max-[1110px]:w-full">
 
                             {openProject !== 1 ? (
                                 <>
@@ -147,8 +149,8 @@ function Projetos() {
                             <Image
                                 src="/E-commerce.png"
                                 alt="Imagem E-commerce"
-                                width={0}
-                                height={0}
+                                width={1600}
+                                height={900}
                                 sizes="100vw"
                                 className="w-full h-auto rounded-3xl"
                                 quality={100}
@@ -253,8 +255,8 @@ function Projetos() {
                             <Image
                                 src="/WebAudit.png"
                                 alt="Imagem Supers Esportivos"
-                                width={0}
-                                height={0}
+                                width={1600}
+                                height={900}
                                 sizes="100vw"
                                 className="w-full h-auto rounded-3xl"
                                 quality={100}
@@ -354,8 +356,8 @@ function Projetos() {
                             <Image
                                 src="/SupersEsportivos.png"
                                 alt="Imagem Supers Esportivos"
-                                width={0}
-                                height={0}
+                                width={1600}
+                                height={900}
                                 sizes="100vw"
                                 className="w-full h-auto rounded-3xl"
                                 quality={100}
@@ -457,8 +459,8 @@ function Projetos() {
                             <Image
                                 src="/ClimaTempo.png"
                                 alt="Imagem Clima Tempo"
-                                width={0}
-                                height={0}
+                                width={1600}
+                                height={900}
                                 sizes="100vw"
                                 className="w-full h-auto rounded-3xl"
                                 quality={100}
