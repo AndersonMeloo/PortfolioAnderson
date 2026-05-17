@@ -36,7 +36,7 @@ function Projetos() {
                         Post <br /> Automation
                     </p>
 
-                    <div className="mt-10 flex w-full flex-row items-start gap-6 max-[1110px]:flex-col">
+                    <div className="mt-10 flex w-full flex-row items-center gap-6 max-[1110px]:flex-col">
 
                         <div className="w-[60%] min-w-0 max-[1110px]:w-full">
                             <Image
