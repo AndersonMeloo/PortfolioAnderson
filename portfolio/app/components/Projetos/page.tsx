@@ -25,7 +25,7 @@ function Projetos() {
                 </div>
 
                 {/* ================= PROJETO 01 ================= */}
-                <div className="w-[90%] max-w-7xl flex flex-col gap-4">
+                <div className="w-[80%] flex flex-col gap-4">
 
                     <div className="flex items-center gap-6">
                         <h2 className="text-8xl font-numbers">01</h2>
