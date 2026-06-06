@@ -67,11 +67,13 @@ function Experiencia() {
                                     <h3 className="text-2xl md:text-3xl font-semibold text-white font-nunito transition-all duration-500 ease-in-out">
                                         Desenvolvedor de front-end - Júnior
                                     </h3>
-                                    <p>Atualmente, contribuo para a evolução tecnológica da empresa, auxiliando outros desenvolvedores na adoção do Next.js e colaborando com equipes de marketing e design. Prezo por um trabalho colaborativo, entregas com valor real e soluções acessíveis, seguindo padrões como WCAG para garantir produtos mais inclusivos e eficientes.</p>
+                                    <div className="text-[#cccccc] flex flex-col gap-4">
+                                        <p>Atualmente, contribuo para a evolução tecnológica da empresa, auxiliando outros desenvolvedores na adoção do Next.js e colaborando com equipes de marketing e design. Prezo por um trabalho colaborativo, entregas com valor real e soluções acessíveis, seguindo padrões como WCAG para garantir produtos mais inclusivos e eficientes.</p>
 
-                                    <p>Atuo como desenvolvedor com experiência em projetos de Front-End e Back-End, participando da criação e otimização de sites e aplicações web personalizadas. Trabalho com tecnologias como JavaScript, React, Next.js, PHP, HTML5, CSS3, SCSS, TailwindCSS e Bootstrap, sempre buscando soluções alinhadas às necessidades do negócio e dos usuários.</p>
+                                        <p>Atuo como desenvolvedor com experiência em projetos de Front-End e Back-End, participando da criação e otimização de sites e aplicações web personalizadas. Trabalho com tecnologias como JavaScript, React, Next.js, PHP, HTML5, CSS3, SCSS, TailwindCSS e Bootstrap, sempre buscando soluções alinhadas às necessidades do negócio e dos usuários.</p>
 
-                                    <p>Tenho forte foco em performance, SEO e qualidade de código, aplicando boas práticas que melhoram indicadores como Core Web Vitals, experiência do usuário e posicionamento nos motores de busca. Também realizo integrações com APIs, além do uso de ferramentas como Google Analytics e Search Console para análise e melhoria contínua dos projetos.</p>
+                                        <p>Tenho forte foco em performance, SEO e qualidade de código, aplicando boas práticas que melhoram indicadores como Core Web Vitals, experiência do usuário e posicionamento nos motores de busca. Também realizo integrações com APIs, além do uso de ferramentas como Google Analytics e Search Console para análise e melhoria contínua dos projetos.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
