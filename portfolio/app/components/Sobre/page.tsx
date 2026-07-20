@@ -13,7 +13,7 @@ function Sobre() {
 
                 <TextType
                     className="font-bold text-xl mt-4 font-nunito"
-                    text={["Desenvolvedor Fullstack Júnior", "Desenvolvedor Front-end Júnior", "Desenvolvedor Front-back Júnior"]}
+                    text={["Desenvolvedor Fullstack Júnior", "Desenvolvedor Front-end Júnior", "Desenvolvedor Back-end Júnior"]}
                     typingSpeed={90}
                     pauseDuration={2500}
                     showCursor={true}
