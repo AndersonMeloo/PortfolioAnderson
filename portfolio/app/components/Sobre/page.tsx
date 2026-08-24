@@ -71,9 +71,11 @@ function Sobre() {
                             </h2>
 
                             <p className="text-white/70 leading-relaxed text-[13px] font-mono">
-                                Atuo como desenvolvedor com experiência em projetos de Front-End e Back-End.
-                                Tenho trabalhado em soluções completas, com foco em qualidade de código,
-                                entregas com valor real e boa colaboração com equipes multidisciplinares.
+                                Sou Desenvolvedor Full Stack, com forte atuação em Front-End. Gosto de transformar ideias em aplicações que resolvem problemas reais.
+
+                                Atualmente atuo como Supervisor Técnico de Desenvolvimento Front-End, conciliando desenvolvimento, liderança técnica e contato com clientes.
+
+                                Estudo Engenharia de Software e estou sempre buscando aprender, criar projetos e evoluir como desenvolvedor.
                             </p>
                         </div>
 
