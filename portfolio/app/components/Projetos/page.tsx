@@ -83,12 +83,12 @@ function Projetos() {
                                         <p className="font-bold font-nunito">Links</p>
 
                                         <Link
-                                            href="https://github.com/AndersonMeloo/PostAutomation"
+                                            href="https://post-automation-psi.vercel.app/"
                                             target="_blank"
                                             className="flex items-center justify-center gap-3 py-2 border rounded-lg text-white font-bold hover:scale-[1.02] font-roboto"
                                         >
                                             <SiGithub size={20} />
-                                            Code
+                                            View Project
                                         </Link>
 
                                         <Link
