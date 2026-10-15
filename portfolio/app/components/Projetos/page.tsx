@@ -6,6 +6,7 @@ import { SiGithub } from "react-icons/si";
 import { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Image from "next/image";
+import { CiGlobe } from "react-icons/ci";
 
 function Projetos() {
 
@@ -83,11 +84,20 @@ function Projetos() {
                                         <p className="font-bold font-nunito">Links</p>
 
                                         <Link
-                                            href="https://post-automation-psi.vercel.app/"
+                                            href="https://github.com/AndersonMeloo/PostAutomation"
                                             target="_blank"
                                             className="flex items-center justify-center gap-3 py-2 border rounded-lg text-white font-bold hover:scale-[1.02] font-roboto"
                                         >
                                             <SiGithub size={20} />
+                                            Code
+                                        </Link>
+
+                                         <Link
+                                            href="https://post-automation-psi.vercel.app/"
+                                            target="_blank"
+                                            className="flex items-center justify-center gap-3 py-2 border rounded-lg text-white font-bold hover:scale-[1.02] font-roboto"
+                                        >
+                                            <CiGlobe size={20} />
                                             View Project
                                         </Link>
 
