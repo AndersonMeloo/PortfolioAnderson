@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-monogram: var(--font-major-mono), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #ffffff;
+  color: #000000;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #ffffff;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Barra de rolagem da página: trilho transparente, sem setas, só o "polegar" fino. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(0 0 0 / 0.22);
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(0 0 0 / 0.4);
+}
+/* Firefox (não tem os seletores acima). No Chrome, scrollbar-color anularia o estilo acima. */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: rgb(0 0 0 / 0.25) transparent;
+    scrollbar-width: thin;
+  }
+}
+
+::selection {
+  background: #0069d9;
+  color: #fff;
+}
+
+/*
+ * Estado inicial das animações GSAP. Só se aplica com JS ativo e sem
+ * preferência por movimento reduzido; o GSAP leva os elementos a opacity: 1.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-reveal],
+  html.js .hero-motion [data-intro],
+  html.js .hero-motion [data-intro-title] {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -40,4 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vscode
+# capturas de referência e resultados de teste (ficam só na máquina)
+/artifacts/
+/test-results/
+/playwright-report/
+/blob-report/
+/novo-portfolio/
+/.vscode/
