@@ -23,7 +23,7 @@ export const profile: Profile = {
   clock: { label: "Brasil", timeZone: "America/Sao_Paulo" },
   // Cidade do widget de clima. Coordenadas: https://open-meteo.com/en/docs
   weather: { city: "São Paulo", latitude: -23.5505, longitude: -46.6333 },
-  photo: { src: "/images/profile/andersonMelo1.webp", alt: "Foto de Anderson Melo" },
+  photo: { src: "/images/profile/anderson-2026.png", alt: "Foto de Anderson Melo" },
   email: "andersonrodriguesmelo@hotmail.com",
   whatsapp: { display: "(11) 98873-0794", number: "5511988730794" },
   cv: "/AndersonMelo-FullStack.pdf",

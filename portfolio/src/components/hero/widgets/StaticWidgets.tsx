@@ -15,7 +15,7 @@ export function PhotoWidget({ className, sizes = "150px" }: { className?: string
         className,
       )}
     >
-      <Image src={profile.photo.src} alt={profile.photo.alt} fill sizes={sizes} className="object-cover object-[50%_12%]" draggable={false} />
+      <Image src={profile.photo.src} alt={profile.photo.alt} fill sizes={sizes} className="object-cover object-[50%_38%]" draggable={false} />
     </div>
   );
 }
