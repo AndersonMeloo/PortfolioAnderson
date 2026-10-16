@@ -3,6 +3,7 @@ import { profile } from "@/data/profile";
 import { desktopFolders } from "@/data/navigation";
 import { MenuBar } from "@/components/layout/MenuBar";
 import { HeroMotion } from "./HeroMotion";
+import { Reveal } from "@/components/animations/Reveal";
 import { ClockWidget } from "./widgets/ClockWidget";
 import { CalendarCard, CalendarWidget } from "./widgets/CalendarWidget";
 import { MusicWidget } from "./widgets/MusicWidget";
@@ -71,7 +72,7 @@ export function Hero() {
           <WeatherWidget />
         </Slot>
         <Slot style={{ top: 404, left: 24 }}>
-          <PhotoWidget className="h-[150px] w-[150px]" />
+          <PhotoWidget className="w-[150px]" />
         </Slot>
 
         {folders.map((f, i) => (
@@ -93,24 +94,36 @@ export function Hero() {
       </HeroMotion>
 
       {/* Mobile: pilha de cards */}
-      <div data-hero-mobile className="flex flex-col gap-4 px-5 pt-10 pb-6 md:hidden">
-        <Widget className="p-5">
+      {/* Mesmos widgets do desktop, empilhados, com entrada animada (sem arrastar, para não brigar com a rolagem). */}
+      <Reveal data-hero-mobile className="flex flex-col gap-4 px-5 pt-10 pb-6 md:hidden" y={12} stagger={0.06} start="top 98%">
+        <Widget data-reveal className="p-5">
           <Title className="text-[30px] leading-[1.08] font-extrabold tracking-[-0.025em]" />
           <p className="mt-3 text-[15px] leading-relaxed text-black/50">{profile.subtitle}</p>
         </Widget>
-        <div className="grid h-[112px] grid-cols-2 gap-4">
-          <CalendarCard href={`mailto:${profile.email}`} />
-          <PhotoWidget className="h-full w-full" sizes="50vw" />
+        <div data-reveal className="grid grid-cols-2 gap-4">
+          <ClockWidget className="aspect-square h-auto w-full p-4" />
+          <PhotoWidget className="w-full" sizes="50vw" />
         </div>
-        <div className="grid grid-cols-4 gap-y-4 py-2">
+        <div data-reveal>
+          <WeatherWidget className="h-[110px] w-full" />
+        </div>
+        <div data-reveal>
+          <CalendarCard href={`mailto:${profile.email}`} />
+        </div>
+        <div data-reveal>
+          <MusicWidget className="w-full" />
+        </div>
+        <div data-reveal className="grid grid-cols-4 gap-y-4 py-2">
           {folders.map((f, i) => (
             <div key={f.label ?? `soon-${i}`} className="flex justify-center">
               <DesktopFolder label={f.label} href={f.href} compact />
             </div>
           ))}
         </div>
-        <AppGridWidget />
-      </div>
+        <div data-reveal>
+          <AppGridWidget />
+        </div>
+      </Reveal>
     </header>
   );
 }

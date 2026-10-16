@@ -139,10 +139,10 @@ test.describe("desktop", () => {
       }),
     );
     await page.goto("/");
-    const list = page.getByRole("list", { name: /Previsão do tempo/ });
+    const list = page.locator(".hero-motion").getByRole("list", { name: /Previsão do tempo/ });
     await expect(list.locator("li")).toHaveCount(7);
     await expect(list).toContainText("30°");
-    await expect(page.getByText("21° agora")).toBeVisible();
+    await expect(page.locator(".hero-motion").getByText("21° agora")).toBeVisible();
   });
 
   test("player com prévia oficial de 30s", async ({ page }) => {

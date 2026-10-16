@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Cloud, CloudDrizzle, CloudFog, CloudLightning, CloudRain, CloudSnow, CloudSun, Sun, type LucideIcon } from "lucide-react";
 import { profile } from "@/data/profile";
 import { Widget } from "@/components/ui/Widget";
+import { cn } from "@/lib/cn";
 
 interface Day {
   date: string;
@@ -55,7 +56,7 @@ async function fetchForecast(signal: AbortSignal): Promise<Forecast> {
 }
 
 /** Previsão de 7 dias em tempo real (equivalente ao widget "Madrid" da referência). */
-export function WeatherWidget() {
+export function WeatherWidget({ className }: { className?: string }) {
   const [forecast, setForecast] = useState<Forecast | null>(null);
   const [failed, setFailed] = useState(false);
 
@@ -84,7 +85,7 @@ export function WeatherWidget() {
   }, []);
 
   return (
-    <Widget className="h-[110px] w-[320px] px-4 pt-3.5">
+    <Widget className={cn("px-4 pt-3.5", className ?? "h-[110px] w-[320px]")}>
       <div className="flex items-baseline justify-between">
         <p className="text-[10px] font-semibold text-black/55">{profile.weather.city}</p>
         <p className="text-[10px] font-medium text-black/40 tabular-nums">

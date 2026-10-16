@@ -3,10 +3,11 @@
 import { profile } from "@/data/profile";
 import { useNow, zonedParts } from "@/hooks/useNow";
 import { Widget } from "@/components/ui/Widget";
+import { cn } from "@/lib/cn";
 
 const ticks = Array.from({ length: 12 }, (_, i) => i);
 
-export function ClockWidget() {
+export function ClockWidget({ className }: { className?: string }) {
   const now = useNow();
   const t = now ? zonedParts(now, profile.clock.timeZone) : null;
   const sec = t ? t.seconds * 6 : 0;
@@ -14,7 +15,8 @@ export function ClockWidget() {
   const hour = t ? (t.hours % 12) * 30 + t.minutes * 0.5 : 0;
 
   return (
-    <Widget className="flex h-[150px] w-[150px] items-center justify-center p-3">
+    // `className` substitui o tamanho/padding padrão (sem conflito de classes).
+    <Widget className={cn("flex items-center justify-center", className ?? "h-[150px] w-[150px] p-3")}>
       <svg viewBox="0 0 120 120" className="h-full w-full" role="img" aria-label={`Relógio — ${profile.clock.label}`}>
         <circle cx="60" cy="60" r="58" fill="#fff" />
         {ticks.map((i) => (

@@ -5,11 +5,12 @@ import Image from "next/image";
 import { Pause, Play, SkipBack, SkipForward } from "lucide-react";
 import { tracks } from "@/data/music";
 import { Widget } from "@/components/ui/Widget";
+import { cn } from "@/lib/cn";
 
 const fmt = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
 
 /** Player de música (equivalente ao widget "Psycho Killer" da referência). */
-export function MusicWidget() {
+export function MusicWidget({ className }: { className?: string }) {
   const audio = useRef<HTMLAudioElement>(null);
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
@@ -61,7 +62,7 @@ export function MusicWidget() {
     "flex h-6 w-6 cursor-pointer items-center justify-center rounded text-black/75 transition-colors hover:text-black disabled:cursor-not-allowed disabled:opacity-30";
 
   return (
-    <Widget className="h-[150px] w-[320px] p-4">
+    <Widget className={cn("h-[150px] p-4", className ?? "w-[320px]")}>
       {playable && (
         <audio
           ref={audio}

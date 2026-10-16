@@ -7,15 +7,19 @@ import { TechIcon, techIcons } from "@/components/icons/TechIcon";
 import { FolderIcon } from "@/components/ui/FolderIcon";
 import { cn } from "@/lib/cn";
 
+/**
+ * Foto de perfil. A moldura é sempre quadrada (como a foto), então a imagem
+ * aparece inteira em qualquer dispositivo; `className` define só a largura.
+ */
 export function PhotoWidget({ className, sizes = "150px" }: { className?: string; sizes?: string }) {
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-[22px] border-2 border-white shadow-[0_10px_30px_rgba(0,0,0,0.1)]",
+        "relative aspect-square overflow-hidden rounded-[22px] border-2 border-white shadow-[0_10px_30px_rgba(0,0,0,0.1)]",
         className,
       )}
     >
-      <Image src={profile.photo.src} alt={profile.photo.alt} fill sizes={sizes} className="object-cover object-[50%_38%]" draggable={false} />
+      <Image src={profile.photo.src} alt={profile.photo.alt} fill sizes={sizes} className="object-cover object-center" draggable={false} />
     </div>
   );
 }

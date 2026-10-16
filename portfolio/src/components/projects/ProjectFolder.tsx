@@ -16,7 +16,7 @@ export function ProjectFolder({ project, index }: { project: Project; index: num
     <article
       id={project.slug}
       aria-labelledby={`${project.slug}-title`}
-      className="z-10 flex h-auto w-full scroll-mt-24 flex-col max-md:static max-md:mt-4 md:sticky md:top-24 md:h-[calc(100dvh-6rem)]"
+      className="sticky top-[84px] z-10 flex h-[calc(100dvh-84px)] w-full scroll-mt-24 flex-col md:top-24 md:h-[calc(100dvh-6rem)]"
       style={{ zIndex: 10 + index }}
     >
       {/* Aba */}
@@ -29,8 +29,8 @@ export function ProjectFolder({ project, index }: { project: Project; index: num
       </div>
 
       {/* Corpo */}
-      <div className="relative -mt-2 flex min-h-0 w-full flex-1 items-start overflow-hidden rounded-t-[28px] bg-gradient-to-b from-[#f7f8fa] via-[#f0f2f5] to-[#e7e9ed] shadow-[inset_0_2px_1px_rgba(255,255,255,0.35),0_-4px_16px_rgba(0,0,0,0.03)] max-md:rounded-b-[28px] md:items-center">
-        <Reveal data-folder-content className="mx-auto w-full max-w-[1100px] px-8 py-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:max-h-full md:overflow-y-auto md:px-12" y={20} stagger={0.1}>
+      <div className="relative -mt-2 flex min-h-0 w-full flex-1 items-start overflow-hidden rounded-t-[28px] bg-gradient-to-b from-[#f7f8fa] via-[#f0f2f5] to-[#e7e9ed] shadow-[inset_0_2px_1px_rgba(255,255,255,0.35),0_-4px_16px_rgba(0,0,0,0.03)] md:items-center">
+        <Reveal data-folder-content className="mx-auto w-full max-w-[1100px] px-8 py-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-h-full overflow-y-auto md:px-12" y={20} stagger={0.1}>
           <p data-reveal className="mb-2 text-[10px] font-semibold tracking-[0.15em] text-black/35 uppercase">
             Projeto nº{n}
           </p>

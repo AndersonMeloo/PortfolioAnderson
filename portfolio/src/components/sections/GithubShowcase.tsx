@@ -26,9 +26,9 @@ export function GithubShowcase() {
   return (
     <section id="github" className="relative z-50 scroll-mt-24 border-t border-black/10 bg-white px-6 py-28">
       <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="group mx-auto flex w-fit flex-col items-center outline-none">
-        <span className="flex flex-wrap items-center justify-center gap-5 md:gap-8">
-          <span className="text-5xl font-extrabold tracking-tight md:text-7xl">Meu</span>
-          <span className="relative block h-[108px] w-[150px] md:h-[126px] md:w-[176px]" aria-hidden>
+        <span className="flex flex-nowrap items-center justify-center gap-3 sm:gap-5 md:gap-8">
+          <span className="text-[38px] font-extrabold tracking-tight sm:text-5xl md:text-7xl">Meu</span>
+          <span className="relative block h-[76px] w-[106px] shrink-0 sm:h-[108px] sm:w-[150px] md:h-[126px] md:w-[176px]" aria-hidden>
             <span className="absolute top-[8%] left-0 h-[34%] w-[42%] rounded-t-xl bg-[#c8ccd3]" />
             <span className="absolute inset-x-0 bottom-0 h-[78%] rounded-2xl bg-gradient-to-b from-[#c8ccd3] to-[#b6bac2]" />
             <span className={`${card} aspect-square -translate-x-[95%] group-hover:-translate-x-[108%] group-hover:-translate-y-[48%] group-hover:-rotate-12 group-focus-visible:-translate-x-[108%] group-focus-visible:-translate-y-[48%] group-focus-visible:-rotate-12`}>
@@ -55,7 +55,7 @@ export function GithubShowcase() {
               Abrir
             </span>
           </span>
-          <span className="text-5xl font-extrabold tracking-tight md:text-7xl">GitHub</span>
+          <span className="text-[38px] font-extrabold tracking-tight sm:text-5xl md:text-7xl">GitHub</span>
         </span>
         <span className="mt-8 text-center text-sm text-black/45">Mais projetos, estudos e experimentos em código aberto.</span>
       </a>
