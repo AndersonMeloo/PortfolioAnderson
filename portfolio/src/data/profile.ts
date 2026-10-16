@@ -63,5 +63,5 @@ export const appGrid: AppGridItem[] = [
   { tech: "nextjs", label: "Next.js" },
   { tech: "nestjs", label: "NestJS" },
   { glyph: "layers", tile: "#1c1d22", label: "Full Stack Engineer" },
-  { glyph: "network", tile: "#3a53ed", label: "System Design", href: "/system-design" },
+  { glyph: "network", tile: "#3a53ed", label: "System Design" },
 ];

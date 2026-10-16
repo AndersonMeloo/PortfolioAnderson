@@ -259,7 +259,7 @@ test("grade de apps: especialidades em uma fileira, terminando em System Design"
   expect(titles).toEqual(["TypeScript", "React", "Next.js", "NestJS", "Full Stack Engineer", "System Design"]);
   const tops = await items.evaluateAll((ls) => ls.map((l) => Math.round(l.getBoundingClientRect().top)));
   expect(new Set(tops).size).toBe(1); // todos na mesma fileira
-  await expect(scope.locator("[data-app-grid] a[href='/system-design']")).toHaveCount(1);
+  await expect(scope.locator("[data-app-grid] a")).toHaveCount(0); // ícones sem link
 });
 
 test("/system-design: rodapé com Contato abrindo o WhatsApp", async ({ page }) => {
