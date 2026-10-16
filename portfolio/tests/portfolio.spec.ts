@@ -276,3 +276,18 @@ test("rodapé principal: WhatsApp com mensagem para recrutadores", async ({ page
   const href = (await wa.getAttribute("href"))!;
   expect(decodeURIComponent(href.split("text=")[1] ?? "")).toContain("gostaria de conversar sobre uma oportunidade");
 });
+
+test("pasta do GitHub abre ao entrar na seção no mobile (e reabre ao voltar)", async ({ page }) => {
+  test.skip(isDesktop(page), "no desktop a pasta abre no hover");
+  await page.goto("/");
+  const group = page.locator("[data-folder-group]");
+  const center = await page.locator("#github").evaluate((el: HTMLElement) => el.getBoundingClientRect().top + scrollY + el.offsetHeight / 2 - innerHeight / 2);
+  const go = (y: number) => page.evaluate((t) => window.scrollTo({ top: t, behavior: "instant" }), y);
+  for (let y = 0; y < center; y += 500) await go(y);
+  await go(center);
+  await expect(group).toHaveAttribute("data-open", "true");
+  await go(center - 1400);
+  await expect(group).not.toHaveAttribute("data-open", "true");
+  await go(center);
+  await expect(group).toHaveAttribute("data-open", "true");
+});
