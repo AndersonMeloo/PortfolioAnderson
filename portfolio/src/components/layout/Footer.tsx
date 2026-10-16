@@ -1,4 +1,4 @@
-import { profile } from "@/data/profile";
+import { profile, whatsappUrl } from "@/data/profile";
 import { Monogram } from "@/components/ui/Monogram";
 import { TechIcon, techIcons } from "@/components/icons/TechIcon";
 
@@ -67,7 +67,7 @@ export function Footer() {
             <p className="text-black/55">
               WhatsApp:{" "}
               <a
-                href={`https://wa.me/${profile.whatsapp.number}`}
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-black/70 transition-colors hover:text-black"

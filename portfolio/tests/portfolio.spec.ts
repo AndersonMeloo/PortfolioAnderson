@@ -268,3 +268,11 @@ test("/system-design: rodapé com Contato abrindo o WhatsApp", async ({ page }) 
   await expect(contato).toHaveAttribute("href", /^https:\/\/wa\.me\/5511988730794\?text=/);
   await expect(contato).toHaveAttribute("target", "_blank");
 });
+
+test("rodapé principal: WhatsApp com mensagem para recrutadores", async ({ page }) => {
+  await page.goto("/");
+  const wa = page.locator("#contato a[href*='wa.me']");
+  await expect(wa).toHaveCount(1);
+  const href = (await wa.getAttribute("href"))!;
+  expect(decodeURIComponent(href.split("text=")[1] ?? "")).toContain("gostaria de conversar sobre uma oportunidade");
+});
