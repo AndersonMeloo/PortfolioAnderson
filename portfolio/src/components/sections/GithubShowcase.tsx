@@ -24,7 +24,7 @@ function CodeCard({ Icon, color, label, children }: { Icon: IconType; color: str
  */
 export function GithubShowcase() {
   const card =
-    "absolute bottom-[30%] left-1/2 block w-[44%] overflow-hidden rounded-lg border-[3px] border-white bg-[#1e1f24] shadow-md transition-transform duration-300 ease-out motion-reduce:transition-none";
+    "absolute bottom-[30%] left-1/2 block w-[44%] overflow-hidden rounded-lg border-[3px] border-white bg-[#1e1f24] shadow-md transition-transform duration-300 ease-out will-change-transform [backface-visibility:hidden] motion-reduce:transition-none";
   return (
     <section id="github" className="relative z-50 scroll-mt-24 border-t border-black/10 bg-white px-6 py-28">
       <OpenOnView>
@@ -56,10 +56,10 @@ export function GithubShowcase() {
                 <span className="text-white/80">findOne()</span>
               </CodeCard>
             </span>
-            <span className="absolute bottom-[30%] left-1/2 flex aspect-square w-[32%] -translate-x-1/2 -rotate-1 items-center justify-center rounded-lg bg-[#FFE066] p-1 shadow-md transition-transform duration-300 ease-out group-hover:-translate-y-[68%] group-data-[open=true]:-translate-y-[68%] group-focus-visible:-translate-y-[68%] motion-reduce:transition-none">
+            <span className="absolute bottom-[30%] left-1/2 flex aspect-square w-[32%] -translate-x-1/2 -rotate-1 items-center justify-center rounded-lg bg-[#FFE066] p-1 shadow-md transition-transform duration-300 ease-out will-change-transform [backface-visibility:hidden] group-hover:-translate-y-[68%] group-data-[open=true]:-translate-y-[68%] group-focus-visible:-translate-y-[68%] motion-reduce:transition-none">
               <span className="text-center text-[7px] leading-tight font-semibold text-black/70 md:text-[8px]">Código aberto</span>
             </span>
-            <span className="absolute inset-x-0 bottom-0 z-10 block h-[62%] origin-bottom rounded-2xl bg-gradient-to-b from-[#f2f3f5] to-[#dfe1e6] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_-2px_8px_rgba(0,0,0,0.06)] transition-transform duration-300 ease-out [transform:perspective(700px)] group-hover:[transform:perspective(700px)_rotateX(-24deg)] group-data-[open=true]:[transform:perspective(700px)_rotateX(-24deg)] group-focus-visible:[transform:perspective(700px)_rotateX(-24deg)] motion-reduce:transition-none" />
+            <span className="absolute inset-x-0 bottom-0 z-10 block h-[62%] origin-bottom rounded-2xl bg-gradient-to-b from-[#f2f3f5] to-[#dfe1e6] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_-2px_8px_rgba(0,0,0,0.06)] transition-transform duration-300 ease-out will-change-transform [backface-visibility:hidden] [transform:perspective(700px)] group-hover:[transform:perspective(700px)_rotateX(-24deg)] group-data-[open=true]:[transform:perspective(700px)_rotateX(-24deg)] group-focus-visible:[transform:perspective(700px)_rotateX(-24deg)] motion-reduce:transition-none" />
             <span className="absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 scale-90 rounded-full bg-[#F7CE46] px-5 py-2 text-sm font-semibold text-black opacity-0 shadow-lg transition-all duration-300 group-hover:scale-100 group-data-[open=true]:scale-100 group-hover:opacity-100 group-data-[open=true]:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100">
               Abrir
             </span>

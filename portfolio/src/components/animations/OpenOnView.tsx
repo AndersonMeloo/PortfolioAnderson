@@ -18,18 +18,33 @@ export function OpenOnView({ children, className }: { children: ReactNode; class
       mm.add("(hover: none), (max-width: 767px)", () => {
         const group = root.current?.querySelector<HTMLElement>("[data-folder-group]");
         if (!group) return;
-        const st = ScrollTrigger.create({
+        // Só escreve quando o estado muda (evita mutações repetidas a cada scroll).
+        const open = () => {
+          if (group.dataset.open !== "true") group.dataset.open = "true";
+        };
+        const close = () => {
+          if (group.dataset.open) delete group.dataset.open;
+        };
+        // Histerese: abre perto do centro, mas só fecha quando sai totalmente da tela.
+        // Assim a oscilação do toque / da barra de endereço na borda não gera abre-fecha (tremor).
+        const openTrigger = ScrollTrigger.create({
           trigger: group,
-          start: "top 75%",
-          end: "bottom 25%",
-          onToggle: (self) => {
-            if (self.isActive) group.dataset.open = "true";
-            else delete group.dataset.open;
-          },
+          start: "top 80%",
+          end: "bottom 20%",
+          onEnter: open,
+          onEnterBack: open,
+        });
+        const closeTrigger = ScrollTrigger.create({
+          trigger: group,
+          start: "top bottom",
+          end: "bottom top",
+          onLeave: close,
+          onLeaveBack: close,
         });
         return () => {
-          st.kill();
-          delete group.dataset.open;
+          openTrigger.kill();
+          closeTrigger.kill();
+          close();
         };
       });
     },
