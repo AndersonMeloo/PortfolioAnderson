@@ -189,7 +189,7 @@ test.describe("movimento reduzido", () => {
 
 test("dock segue a ordem das seções na página", async ({ page }) => {
   await page.goto("/");
-  const hrefs = await page.getByRole("navigation", { name: "Navegação principal" }).locator("a").evaluateAll((as) => as.map((a) => a.getAttribute("href")!));
+  const hrefs = (await page.getByRole("navigation", { name: "Navegação principal" }).locator("a").evaluateAll((as) => as.map((a) => a.getAttribute("href")!))).filter((h) => h.startsWith("#"));
   const tops = await page.evaluate((ids) => ids.map((id) => document.querySelector(id)!.getBoundingClientRect().top + scrollY), hrefs);
   expect(tops).toEqual([...tops].sort((a, b) => a - b));
 });
@@ -260,4 +260,11 @@ test("grade de apps: especialidades em uma fileira, terminando em System Design"
   const tops = await items.evaluateAll((ls) => ls.map((l) => Math.round(l.getBoundingClientRect().top)));
   expect(new Set(tops).size).toBe(1); // todos na mesma fileira
   await expect(scope.locator("[data-app-grid] a[href='/system-design']")).toHaveCount(1);
+});
+
+test("/system-design: rodapé com Contato abrindo o WhatsApp", async ({ page }) => {
+  await page.goto("/system-design");
+  const contato = page.locator("footer").getByRole("link", { name: "Contato" });
+  await expect(contato).toHaveAttribute("href", /^https:\/\/wa\.me\/5511988730794\?text=/);
+  await expect(contato).toHaveAttribute("target", "_blank");
 });

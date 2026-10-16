@@ -42,6 +42,9 @@ export const profile: Profile = {
 
 export const githubUrl = "https://github.com/AndersonMeloo";
 
+/** Conversa no WhatsApp com uma mensagem inicial já preenchida (pensada para recrutadores). */
+export const whatsappUrl = `https://wa.me/${profile.whatsapp.number}?text=${encodeURIComponent(`Olá, ${profile.firstName}! Encontrei seu portfólio e gostaria de conversar sobre uma oportunidade.`)}`;
+
 /** Ícones desenhados (lucide) para conceitos que não têm logo de marca. */
 export type AppGlyph = "layers" | "network";
 

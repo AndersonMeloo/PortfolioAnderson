@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, Plane } from "lucide-react";
-import { githubUrl, profile } from "@/data/profile";
+import { githubUrl, profile, whatsappUrl } from "@/data/profile";
 
 /** Coordenadas no formato "23.5505° S, 46.6333° W". */
 function coords(lat: number, lon: number) {
@@ -59,6 +59,7 @@ export function FlightFooter() {
     { label: "LinkedIn", href: profile.socials.find((s) => s.icon === "linkedin")?.href ?? "#" },
     { label: "GitHub", href: githubUrl },
     { label: "Email", href: `mailto:${profile.email}` },
+    { label: "Contato", href: whatsappUrl },
   ];
   return (
     <>
