@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
-import { profile } from "@/data/profile";
+import { profile, whatsappUrl } from "@/data/profile";
 import { desktopFolders } from "@/data/navigation";
 import { MenuBar } from "@/components/layout/MenuBar";
 import { HeroMotion } from "./HeroMotion";
@@ -108,7 +108,7 @@ export function Hero() {
           <WeatherWidget className="h-[110px] w-full" />
         </div>
         <div data-reveal>
-          <CalendarCard href={`mailto:${profile.email}`} />
+          <CalendarCard href={whatsappUrl} />
         </div>
         <div data-reveal>
           <MusicWidget className="w-full" />

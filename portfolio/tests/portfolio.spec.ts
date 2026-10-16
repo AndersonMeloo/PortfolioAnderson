@@ -291,3 +291,11 @@ test("pasta do GitHub abre ao entrar na seção no mobile (e reabre ao voltar)",
   await go(center);
   await expect(group).toHaveAttribute("data-open", "true");
 });
+
+test("card 'Toque para falar comigo' (mobile) abre o WhatsApp", async ({ page }) => {
+  test.skip(isDesktop(page), "card só existe no hero mobile");
+  await page.goto("/");
+  const card = page.locator("[data-hero-mobile]").getByRole("link", { name: "Falar comigo pelo WhatsApp" });
+  await expect(card).toHaveAttribute("href", /^https:\/\/wa\.me\/5511988730794\?text=/);
+  await expect(card).toHaveAttribute("target", "_blank");
+});

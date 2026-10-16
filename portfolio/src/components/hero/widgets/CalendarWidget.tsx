@@ -60,7 +60,12 @@ export function CalendarWidget() {
 export function CalendarCard({ href }: { href: string }) {
   const today = useToday();
   return (
-    <a href={href} className="block h-full">
+    <a
+      href={href}
+      {...(href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
+      aria-label="Falar comigo pelo WhatsApp"
+      className="block h-full"
+    >
       <Widget className="flex h-full flex-col justify-center p-4">
         <p className="text-[11px] font-bold uppercase tracking-[0.06em] text-[#FF3700]" suppressHydrationWarning>
           {today?.weekday ?? " "}
