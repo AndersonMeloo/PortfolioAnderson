@@ -16,7 +16,7 @@ export function ProjectFolder({ project, index }: { project: Project; index: num
     <article
       id={project.slug}
       aria-labelledby={`${project.slug}-title`}
-      className="sticky top-[84px] z-10 flex h-[calc(100dvh-84px)] w-full scroll-mt-24 flex-col md:top-24 md:h-[calc(100dvh-6rem)]"
+      className="sticky top-[84px] z-10 flex h-[calc(var(--app-h,100svh)-84px)] w-full scroll-mt-24 flex-col md:top-24 md:h-[calc(100dvh-6rem)]"
       style={{ zIndex: 10 + index }}
     >
       {/* Aba */}

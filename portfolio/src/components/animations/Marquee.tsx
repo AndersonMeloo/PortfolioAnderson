@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
+import { Children, cloneElement, isValidElement, useRef, type ReactNode } from "react";
 import { gsap, useGSAP, MOTION_OK } from "@/lib/gsap";
 
 /**
@@ -54,8 +54,12 @@ export function Marquee({
     >
       <div ref={track} className="flex w-max">
         <div className="flex shrink-0 gap-4 pr-4 md:gap-[18px] md:pr-[18px]">{children}</div>
-        <div className="flex shrink-0 gap-4 pr-4 md:gap-[18px] md:pr-[18px]" aria-hidden inert>
-          {children}
+        {/* Cópia para o loop: sem `inert` (que bloquearia o hover), mas oculta para leitores
+            de tela e fora da navegação por Tab. */}
+        <div className="flex shrink-0 gap-4 pr-4 md:gap-[18px] md:pr-[18px]" aria-hidden>
+          {Children.map(children, (child) =>
+            isValidElement<{ tabIndex?: number }>(child) ? cloneElement(child, { tabIndex: -1 }) : child,
+          )}
         </div>
       </div>
       <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#fafafa] to-transparent md:w-24" />

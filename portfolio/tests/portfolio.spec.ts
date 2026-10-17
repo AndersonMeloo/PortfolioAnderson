@@ -299,3 +299,24 @@ test("card 'Toque para falar comigo' (mobile) abre o WhatsApp", async ({ page })
   await expect(card).toHaveAttribute("href", /^https:\/\/wa\.me\/5511988730794\?text=/);
   await expect(card).toHaveAttribute("target", "_blank");
 });
+
+test("carrossel 'Na prática': cópia do loop aceita hover e fica fora do Tab", async ({ page }) => {
+  await page.goto("/");
+  const copy = page.locator("#na-pratica [role=region] > div > div").nth(1);
+  expect(await copy.evaluate((el) => (el as HTMLElement).inert)).toBe(false); // inert bloquearia o hover
+  await expect(copy).toHaveAttribute("aria-hidden", "true");
+  const tabIndexes = await copy.locator("a").evaluateAll((as) => as.map((a) => (a as HTMLElement).tabIndex));
+  expect(tabIndexes.length).toBeGreaterThan(0);
+  expect(tabIndexes.every((t) => t === -1)).toBe(true);
+});
+
+test("mobile: barra de endereço sumindo não faz a página pular", async ({ page }) => {
+  test.skip(isDesktop(page), "a barra de endereço dinâmica é do celular");
+  await page.setViewportSize({ width: 390, height: 774 }); // barra visível
+  await page.goto("/");
+  const top = () => page.evaluate(() => Math.round(document.querySelector("#github")!.getBoundingClientRect().top + scrollY));
+  const before = await top();
+  await page.setViewportSize({ width: 390, height: 844 }); // barra some (só a altura muda)
+  await page.waitForTimeout(300);
+  expect(await top()).toBe(before);
+});

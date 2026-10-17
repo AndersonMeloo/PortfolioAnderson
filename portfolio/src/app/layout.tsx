@@ -26,7 +26,10 @@ export const viewport: Viewport = {
 
 // Marca a página como "com JS" antes da primeira pintura, para que os
 // elementos animados comecem ocultos sem piscar (sem JS, tudo fica visível).
-const jsFlag = `document.documentElement.classList.add('js')`;
+// Também fixa --app-h (altura da tela) no carregamento e só a atualiza quando a LARGURA muda
+// (girar o celular). Assim a barra de endereço do mobile, que muda só a altura durante a
+// rolagem, não redimensiona as pastas nem faz a página "pular".
+const jsFlag = `(function(){var d=document.documentElement;d.classList.add('js');var w=innerWidth;function h(){d.style.setProperty('--app-h',innerHeight+'px')}h();addEventListener('resize',function(){if(innerWidth!==w){w=innerWidth;h()}})})()`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
