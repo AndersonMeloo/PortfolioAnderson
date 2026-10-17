@@ -214,8 +214,8 @@ test.describe("/system-design", () => {
     page.on("pageerror", (e) => errors.push(e.message));
     await page.goto("/system-design");
     await expect(page.getByRole("heading", { level: 1, name: "System Design" })).toBeVisible();
-    await expect(page.locator("[data-leg]")).toHaveCount(5); // 4 trechos + certificado
-    await expect(page.getByText("Próximo destino", { exact: true })).toHaveCount(3);
+    await expect(page.locator("[data-leg]")).toHaveCount(7); // 6 trechos + certificado
+    await expect(page.getByText("Próximo destino", { exact: true })).toHaveCount(5);
     await expect(page.getByText("Cartão de embarque")).toBeVisible();
     await expect(page.getByText("Atual", { exact: true })).toHaveCount(1);
     expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(0);

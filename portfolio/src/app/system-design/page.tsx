@@ -10,7 +10,7 @@ import { FlightAside, FlightFooter, FlightPlan } from "@/components/system-desig
 
 export const metadata: Metadata = {
   title: `System Design | ${profile.name}`,
-  description: `Trilha de estudo de System Design de ${profile.name}: fundamentos, dados, tráfego e cache, sistemas assíncronos e distribuídos.`,
+  description: `Trilha de estudo de System Design de ${profile.name}: bancos de dados, filas, redes, cache, arquitetura, requisitos e escala.`,
 };
 
 export default function SystemDesignPage() {

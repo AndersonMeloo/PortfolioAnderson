@@ -16,6 +16,16 @@ import {
   Timer,
   Triangle,
   Zap,
+  Layers,
+  Lock,
+  Signpost,
+  Hash,
+  Box,
+  Workflow,
+  Calculator,
+  Rocket,
+  MessagesSquare,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 import type { Leg, Topic, TopicIcon } from "@/data/system-design";
@@ -38,6 +48,16 @@ const icons: Record<TopicIcon, LucideIcon> = {
   boxes: Boxes,
   clock: Clock,
   activity: Activity,
+  layers: Layers,
+  lock: Lock,
+  signpost: Signpost,
+  hash: Hash,
+  box: Box,
+  workflow: Workflow,
+  calculator: Calculator,
+  rocket: Rocket,
+  messages: MessagesSquare,
+  users: Users,
 };
 
 /**
@@ -106,7 +126,7 @@ export function LegEntry({ leg }: { leg: Leg }) {
         <Stop big planned={planned} />
       </div>
 
-      <div className={planned ? "pl-2 opacity-60 transition-opacity duration-300 hover:opacity-100 md:pl-3" : "pl-2 md:pl-3"}>
+      <div className={planned ? "pl-2 opacity-60 md:pl-3" : "pl-2 md:pl-3"}>
         <span className="mb-2 flex -space-x-1.5" aria-hidden>
           {leg.topics.slice(0, 3).map((t) => {
             const Icon = icons[t.icon];
@@ -136,7 +156,14 @@ export function LegEntry({ leg }: { leg: Leg }) {
               <span className="absolute top-1/2 -left-[calc(20px+0.5rem)] w-5 -translate-y-1/2 md:-left-[calc(20px+0.75rem)]">
                 <Stop planned={planned} />
               </span>
-              <div className="group flex items-center gap-3 rounded-2xl px-3 py-2.5 transition-colors duration-200 hover:bg-black/[0.035]">
+              {/* Hover (fundo + leque abrindo) só no trecho em andamento; os planejados ficam estáticos. */}
+              <div
+                className={
+                  planned
+                    ? "flex items-center gap-3 rounded-2xl px-3 py-2.5"
+                    : "group flex items-center gap-3 rounded-2xl px-3 py-2.5 transition-colors duration-200 hover:bg-black/[0.035]"
+                }
+              >
                 <TopicFan topic={t} color={leg.color} />
                 <div className="min-w-0">
                   <p className="text-[14px] font-medium text-[#313030]">{t.name}</p>

@@ -1,5 +1,7 @@
 /**
  * Conteúdo da página /system-design (trilha de estudo em formato de "plano de voo").
+ * Trechos = módulos do "Curso Completo de System Design" (Augusto Galego, Hubla), na ordem do curso,
+ * agrupados por tema. Nomes dos módulos conforme o índice do curso; descrições próprias.
  * Ordem: do trecho atual para os anteriores (como uma linha do tempo, mais recente no topo).
  */
 export type TopicIcon =
@@ -19,7 +21,17 @@ export type TopicIcon =
   | "inbox"
   | "boxes"
   | "clock"
-  | "activity";
+  | "activity"
+  | "layers"
+  | "lock"
+  | "signpost"
+  | "hash"
+  | "box"
+  | "workflow"
+  | "calculator"
+  | "rocket"
+  | "messages"
+  | "users";
 
 export interface Topic {
   name: string;
@@ -42,7 +54,7 @@ export interface Leg {
 
 export const systemDesignPage = {
   title: "System Design",
-  subtitle: "Estudando como projetar sistemas que escalam, dos fundamentos aos sistemas distribuídos.",
+  subtitle: "Estudando como projetar sistemas que escalam, módulo a módulo, com o Curso Completo de System Design.",
   /**
    * Certificado (destino final da trilha). Enquanto `image`/`url` estiverem vazios,
    * o cartão aparece como "Em breve". Coloque a imagem em /public (ex.: "/images/certificado.png").
@@ -64,59 +76,78 @@ export const systemDesignPage = {
 export const legs: Leg[] = [
   {
     code: "SD·01",
-    title: "Fundamentos",
+    title: "Bancos de dados",
     status: "current",
-    subtitle: "Base para qualquer decisão de arquitetura",
-    summary: "Estudando os conceitos que guiam os trade-offs de um sistema: como ele cresce, quão rápido responde e o que acontece quando algo falha.",
+    subtitle: "Onde e como a informação vive",
+    summary: "O ponto de partida do curso: como os dados são guardados, consultados e mantidos consistentes.",
     color: "#3a53ed",
     topics: [
-      { name: "Escalabilidade vertical e horizontal", description: "Máquinas maiores ou mais máquinas, e o custo de cada caminho.", icon: "scale" },
-      { name: "Latência vs. throughput", description: "Quanto tempo uma requisição leva e quantas o sistema aguenta.", icon: "gauge" },
-      { name: "Teorema CAP", description: "Consistência, disponibilidade e tolerância a partições: escolher duas.", icon: "triangle" },
-      { name: "Disponibilidade", description: "Redundância, failover e o que significam os \"noves\" de um SLA.", icon: "shield" },
+      { name: "Bancos de Dados (SQL)", description: "Tabelas, relações e transações em bancos relacionais.", icon: "database" },
+      { name: "NoSQL", description: "Modelos flexíveis (documento, chave-valor) para outros tipos de escala.", icon: "layers" },
     ],
   },
   {
     code: "SD·02",
-    title: "Dados",
+    title: "Filas e tráfego",
     status: "planned",
-    subtitle: "Onde e como a informação vive",
-    summary: "Modelagem e armazenamento: escolher o banco certo e fazê-lo crescer sem perder desempenho nem confiabilidade.",
+    subtitle: "Como as requisições chegam e são distribuídas",
+    summary: "Desacoplar trabalho com filas e organizar a entrada de requisições no sistema.",
     color: "#0f9d76",
     topics: [
-      { name: "SQL vs. NoSQL", description: "Esquema e transações de um lado, flexibilidade e escala do outro.", icon: "database" },
-      { name: "Índices", description: "Consultas rápidas em troca de escrita mais cara e espaço extra.", icon: "list" },
-      { name: "Replicação", description: "Cópias do banco para leitura em escala e recuperação de falhas.", icon: "copy" },
-      { name: "Sharding", description: "Particionar os dados entre servidores quando um só não dá conta.", icon: "split" },
+      { name: "Queues (Filas)", description: "Processar trabalho de forma assíncrona, fora da requisição.", icon: "inbox" },
+      { name: "Load Balancers", description: "Distribuir requisições entre várias instâncias.", icon: "network" },
+      { name: "API Gateway", description: "Porta de entrada única: roteamento, autenticação e limites.", icon: "door" },
     ],
   },
   {
     code: "SD·03",
-    title: "Tráfego e cache",
+    title: "Redes",
     status: "planned",
-    subtitle: "O caminho da requisição até o servidor",
-    summary: "Distribuir carga, aproximar o conteúdo do usuário e evitar trabalho repetido.",
+    subtitle: "O caminho da requisição pela internet",
+    summary: "Como os sistemas conversam pela rede, se identificam e encontram uns aos outros.",
     color: "#e46a2b",
     topics: [
-      { name: "Load balancer", description: "Distribui as requisições entre instâncias e tira as que falham.", icon: "network" },
-      { name: "CDN", description: "Conteúdo estático servido perto de quem acessa.", icon: "globe" },
-      { name: "Cache (Redis)", description: "Respostas guardadas em memória para não repetir trabalho caro.", icon: "zap" },
-      { name: "Rate limiting", description: "Limitar requisições por cliente para proteger o sistema.", icon: "timer" },
-      { name: "API gateway", description: "Porta de entrada única: autenticação, roteamento e limites.", icon: "door" },
+      { name: "Networking", description: "Protocolos e a comunicação entre clientes e servidores.", icon: "globe" },
+      { name: "Auth", description: "Autenticação e autorização: quem é o usuário e o que ele pode fazer.", icon: "lock" },
+      { name: "DNS", description: "Como um nome de domínio vira o endereço de um servidor.", icon: "signpost" },
     ],
   },
   {
     code: "SD·04",
-    title: "Assíncrono e distribuído",
+    title: "Armazenamento e entrega",
     status: "planned",
-    subtitle: "Quando o sistema vira vários sistemas",
-    summary: "Desacoplar serviços, lidar com dados que chegam fora de ordem e enxergar o que acontece em produção.",
+    subtitle: "Guardar, gerar e servir dados rápido",
+    summary: "Peças que tiram carga do banco e aproximam o conteúdo de quem acessa.",
     color: "#8b3df0",
     topics: [
-      { name: "Filas e mensageria", description: "RabbitMQ e Kafka para processar trabalho fora da requisição.", icon: "inbox" },
-      { name: "Microsserviços", description: "Serviços independentes, com deploy e escala separados.", icon: "boxes" },
-      { name: "Consistência eventual", description: "Aceitar que os dados convergem com o tempo, e projetar para isso.", icon: "clock" },
-      { name: "Observabilidade", description: "Logs, métricas e tracing para entender o sistema em produção.", icon: "activity" },
+      { name: "Sequencer", description: "Gerar identificadores únicos e ordenados em sistemas distribuídos.", icon: "hash" },
+      { name: "Blob Store", description: "Armazenar arquivos grandes como imagens e vídeos.", icon: "box" },
+      { name: "Cache", description: "Guardar respostas em memória para não repetir trabalho caro.", icon: "zap" },
+      { name: "CDN", description: "Servir conteúdo estático a partir de servidores perto do usuário.", icon: "globe" },
+    ],
+  },
+  {
+    code: "SD·05",
+    title: "Arquitetura",
+    status: "planned",
+    subtitle: "Como organizar o sistema como um todo",
+    summary: "Padrões que se repetem em sistemas grandes e a escolha entre um bloco único ou vários serviços.",
+    color: "#c9a227",
+    topics: [
+      { name: "Conceitos Adicionais e Padrões de Arquitetura", description: "Padrões recorrentes no desenho de sistemas.", icon: "workflow" },
+      { name: "Microserviços e Monolitos", description: "Quando dividir em serviços e quando manter tudo junto.", icon: "boxes" },
+    ],
+  },
+  {
+    code: "SD·06",
+    title: "Requisitos e escala",
+    status: "planned",
+    subtitle: "Do que o sistema precisa e quanto ele aguenta",
+    summary: "Levantar requisitos, estimar capacidade e colocar o sistema no ar para crescer.",
+    color: "#0e7490",
+    topics: [
+      { name: "Requisitos e Estimativas", description: "Requisitos, SLA, Lei de Little e estimativas back-of-the-envelope.", icon: "calculator" },
+      { name: "Deploys e Escalabilidade", description: "Publicar mudanças e escalar o sistema em produção.", icon: "rocket" },
     ],
   },
 ];

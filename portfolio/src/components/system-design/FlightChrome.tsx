@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Plane } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { githubUrl, profile, whatsappUrl } from "@/data/profile";
 
 /** Coordenadas no formato "23.5505° S, 46.6333° W". */
@@ -44,7 +44,8 @@ export function FlightPlan() {
     <div className="relative h-[88px] [margin-left:calc(var(--tl-label)+10px)]" aria-hidden>
       <div className="absolute top-0 left-[34px] flex -translate-x-1/2 flex-col items-center gap-1.5">
         <span className="font-mono text-[6px] font-medium tracking-[0.13em] text-[#3a53ed] uppercase">Plano de voo</span>
-        <Plane className="h-3.5 w-3.5 -rotate-45 text-[#3a53ed]" fill="currentColor" strokeWidth={1.5} />
+        {/* Espaço do avião: o avião animado (FlightTimeline) decola deste ponto. */}
+        <span className="block h-3.5 w-3.5" />
       </div>
       <svg className="absolute top-[34px] left-0 h-[54px] w-[40px] overflow-visible" viewBox="0 0 40 54" fill="none">
         <path d="M34 0 C34 26, 0 22, 0 54" stroke="rgb(0 0 0 / 0.22)" strokeDasharray="3 3" />
