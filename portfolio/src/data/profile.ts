@@ -26,7 +26,7 @@ export const profile: Profile = {
   photo: { src: "/images/profile/anderson-2026.png", alt: "Foto de Anderson Melo" },
   email: "andersonrodriguesmelo@hotmail.com",
   whatsapp: { display: "(11) 98873-0794", number: "5511988730794" },
-  cv: "/AndersonMelo-FullStack.pdf",
+  cv: "/Curriculo_Anderson_Melo_Desenvolvedor.pdf",
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/andersonrodriguesmelo/", icon: "linkedin" },
     { label: "GitHub", href: "https://github.com/AndersonMeloo", icon: "github" },
