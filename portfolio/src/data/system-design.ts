@@ -2,7 +2,7 @@
  * Conteúdo da página /system-design (trilha de estudo em formato de "plano de voo").
  * Trechos = módulos do "Curso Completo de System Design" (Augusto Galego, Hubla), na ordem do curso;
  * tópicos = aulas de cada módulo. Resumos, subtítulos e descrições das aulas são textos próprios.
- * Ordem: do trecho atual para os anteriores (como uma linha do tempo, mais recente no topo).
+ * Ordem: a mesma do curso. Ao avançar, atualize `currentLesson` e o `status` dos módulos.
  */
 export type TopicIcon =
   | "scale"
@@ -44,14 +44,17 @@ export interface Leg {
   /** Código curto do trecho, exibido em mono ao lado da linha. */
   code: string;
   title: string;
-  /** "current": em andamento (etiqueta "Atual"); "planned": ainda vai começar ("Próximo destino"). */
-  status: "current" | "planned";
+  /** "done": concluído; "current": em andamento ("Atual"); "planned": ainda vai começar ("Próximo destino"). */
+  status: "done" | "current" | "planned";
   subtitle: string;
   summary: string;
   /** Cor do trecho (miniaturas dos tópicos). */
   color: string;
   topics: Topic[];
 }
+
+/** Aula em que parei: o avião estaciona aqui. Precisa ser o nome de uma aula do módulo "current". */
+export const currentLesson = "Introdução a Bancos de Dados";
 
 export const systemDesignPage = {
   title: "System Design",
@@ -99,7 +102,7 @@ export const legs: Leg[] = [
   leg(1, "Intro", "network", "O ponto de partida", "O que é System Design e a base de como os sistemas se comunicam.", [
     ["O que é System Design?", "Planejar como as partes de um sistema se conectam para ele funcionar e crescer."],
     ["Client Server", "O modelo base da web: o cliente faz pedidos e o servidor processa e responde."],
-  ], "current"),
+  ], "done"),
   leg(2, "Bancos de Dados (SQL)", "database", "Onde e como a informação vive", "Como os dados são guardados, consultados e mantidos consistentes.", [
     ["Introdução a Bancos de Dados", "O que é um banco de dados e por que quase todo sistema depende de um."],
     ["ACID", "Garantias de uma transação: ou tudo acontece, ou nada, sem deixar dados inconsistentes."],
@@ -113,7 +116,7 @@ export const legs: Leg[] = [
     ["Locks Otimistas e Pessimistas", "Duas formas de evitar que edições simultâneas sobrescrevam dados."],
     ["Federation", "Separa os bancos por função, como usuários e pedidos, para dividir a carga."],
     ["Locks", "Travas que controlam o acesso simultâneo ao mesmo dado."],
-  ]),
+  ], "current"),
   leg(3, "NoSQL", "layers", "Modelos além do relacional", "Quando sair das tabelas para ganhar flexibilidade e escala.", [
     ["NoSQL Intro", "Bancos sem tabelas fixas, como documentos e chave-valor, para dados flexíveis e grande escala."],
   ]),

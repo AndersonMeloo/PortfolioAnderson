@@ -28,7 +28,7 @@ import {
   Users,
   type LucideIcon,
 } from "lucide-react";
-import type { Leg, Topic, TopicIcon } from "@/data/system-design";
+import { currentLesson, type Leg, type Topic, type TopicIcon } from "@/data/system-design";
 
 const icons: Record<TopicIcon, LucideIcon> = {
   scale: Scale,
@@ -110,11 +110,12 @@ function TopicFan({ topic, color }: { topic: Topic; color: string }) {
 export function LegEntry({ leg }: { leg: Leg }) {
   const [prefix, num] = leg.code.split("·");
   const planned = leg.status === "planned";
+  const currentIndex = leg.topics.findIndex((t) => t.name === currentLesson);
   return (
     <article
       data-leg
       data-planned={planned || undefined}
-      className="grid grid-cols-[var(--tl-label)_20px_minmax(0,1fr)] pb-16 last:pb-10"
+      className="relative grid grid-cols-[var(--tl-label)_20px_minmax(0,1fr)] pb-16 last:pb-10"
     >
       {/* Rótulo do trecho */}
       {/* Continua no grid no mobile (coluna de 0px), só invisível — se saísse do fluxo, as colunas deslocariam. */}
@@ -142,6 +143,8 @@ export function LegEntry({ leg }: { leg: Leg }) {
           {leg.title}
           {planned ? (
             <span className="font-mono text-[10px] font-medium tracking-[0.12em] text-black/40 uppercase">Próximo destino</span>
+          ) : leg.status === "done" ? (
+            <span className="font-mono text-[10px] font-medium tracking-[0.12em] text-[#0f9d76] uppercase">Concluído</span>
           ) : (
             <span className="font-mono text-[10px] font-medium tracking-[0.12em] text-[#3a53ed] uppercase">Atual</span>
           )}
@@ -150,17 +153,20 @@ export function LegEntry({ leg }: { leg: Leg }) {
         <p className="mt-1.5 text-[15px] leading-[1.7] text-black/55">{leg.summary}</p>
 
         <ul className="mt-5 flex flex-col gap-1">
-          {leg.topics.map((t) => (
-            <li key={t.name} className="relative">
+          {leg.topics.map((t, i) => {
+            // Aulas depois da atual, no mesmo módulo, ainda não foram voadas.
+            const upcoming = currentIndex >= 0 && i > currentIndex;
+            return (
+            <li key={t.name} data-current-lesson={i === currentIndex || undefined} className="relative">
               {/* Ponto pequeno na linha, alinhado a este tópico */}
               <span className="absolute top-1/2 -left-[calc(20px+0.5rem)] w-5 -translate-y-1/2 md:-left-[calc(20px+0.75rem)]">
-                <Stop planned={planned} />
+                <Stop planned={planned || upcoming} />
               </span>
               {/* Hover (fundo + leque abrindo) só no trecho em andamento; os planejados ficam estáticos. */}
               <div
                 className={
-                  planned
-                    ? "flex items-center gap-3 rounded-2xl px-3 py-2.5"
+                  planned || upcoming
+                    ? `flex items-center gap-3 rounded-2xl px-3 py-2.5 ${upcoming ? "opacity-60" : ""}`
                     : "group flex items-center gap-3 rounded-2xl px-3 py-2.5 transition-colors duration-200 hover:bg-black/[0.035]"
                 }
               >
@@ -171,7 +177,8 @@ export function LegEntry({ leg }: { leg: Leg }) {
                 </div>
               </div>
             </li>
-          ))}
+            );
+          })}
         </ul>
       </div>
     </article>

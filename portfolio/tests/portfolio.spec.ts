@@ -215,7 +215,7 @@ test.describe("/system-design", () => {
     await page.goto("/system-design");
     await expect(page.getByRole("heading", { level: 1, name: "System Design" })).toBeVisible();
     await expect(page.locator("[data-leg]")).toHaveCount(18); // 17 módulos + certificado
-    await expect(page.getByText("Próximo destino", { exact: true })).toHaveCount(16);
+    await expect(page.getByText("Próximo destino", { exact: true })).toHaveCount(15);
     await expect(page.getByText("Cartão de embarque")).toBeVisible();
     await expect(page.getByText("Atual", { exact: true })).toHaveCount(1);
     expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(0);
@@ -241,14 +241,14 @@ test.describe("/system-design", () => {
   });
 });
 
-test("/system-design: linha azul termina no trecho atual", async ({ page }) => {
+test("/system-design: linha azul e avião terminam na aula atual", async ({ page }) => {
   await page.goto("/system-design");
-  const current = page.locator("[data-leg]:not([data-planned])").last();
-  const box = await current.boundingBox();
+  const lesson = page.locator("[data-current-lesson]");
+  await expect(lesson).toHaveCount(1);
+  await expect(lesson).toContainText("Introdução a Bancos de Dados");
   const fillH = await page.locator("[data-leg]").first().evaluate((el) => (el.parentElement!.children[1] as HTMLElement).offsetHeight);
-  const legBottom = await current.evaluate((el: HTMLElement) => el.offsetTop + el.offsetHeight);
-  expect(box).not.toBeNull();
-  expect(fillH).toBe(legBottom);
+  const lessonCenter = await lesson.evaluate((el: HTMLElement) => (el.offsetParent as HTMLElement).offsetTop + el.offsetTop + el.offsetHeight / 2);
+  expect(Math.abs(fillH - lessonCenter)).toBeLessThanOrEqual(1);
 });
 
 test("grade de apps: especialidades em uma fileira, terminando em System Design", async ({ page }) => {

@@ -6,14 +6,14 @@ import { gsap, ScrollTrigger, useGSAP, MOTION_OK, REDUCED } from "@/lib/gsap";
 
 // Rota do avião em coordenadas da linha do tempo (x = linha, y = topo da linha do tempo):
 // decola do "Plano de voo" (34, -67), desce a trilha tracejada até a linha (0, 0) e segue
-// pela linha até o fim do trecho atual (0, altura da linha azul).
+// pela linha até a aula atual (0, altura da linha azul).
 const routeFrom = "M34,-67 L34,-54 C34,-28 0,-32 0,0";
 
 /**
  * Linha do tempo com progresso ligado ao scroll: a linha azul cresce de cima
  * para baixo e cada ponto (`[data-stop]`) acende ao ser alcançado.
- * A linha azul só cobre os trechos em andamento; os planejados (`[data-planned]`)
- * ficam apenas no trilho tracejado ("ainda não voado").
+ * A linha azul só vai até a aula atual (`[data-current-lesson]`); o resto fica apenas
+ * no trilho tracejado ("ainda não voado").
  * Os trechos (`[data-leg]`) entram com fade + deslocamento.
  */
 export function FlightTimeline({ children }: { children: ReactNode }) {
@@ -27,11 +27,11 @@ export function FlightTimeline({ children }: { children: ReactNode }) {
     () => {
       const mm = gsap.matchMedia();
       const stops = gsap.utils.toArray<HTMLElement>("[data-stop]", root.current);
-      const flown = gsap.utils.toArray<HTMLElement>("[data-leg]:not([data-planned])", root.current);
-      const lastFlown = flown[flown.length - 1];
+      const lesson = root.current?.querySelector<HTMLElement>("[data-current-lesson]") ?? null;
 
-      // Altura da linha azul = até o fim do último trecho em andamento (recalcula no resize).
-      const flownHeight = () => (lastFlown ? lastFlown.offsetTop + lastFlown.offsetHeight : 0);
+      // Altura da linha azul = até o ponto da aula atual (recalcula no resize).
+      // offsetTop porque o trecho (relative) entra com translate, que falsearia o getBoundingClientRect.
+      const flownHeight = () => (lesson ? (lesson.offsetParent as HTMLElement).offsetTop + lesson.offsetTop + lesson.offsetHeight / 2 : 0);
       const sizeFill = () => {
         if (!fill.current) return;
         fill.current.style.height = `${flownHeight()}px`;
@@ -46,7 +46,7 @@ export function FlightTimeline({ children }: { children: ReactNode }) {
       ScrollTrigger.addEventListener("refreshInit", sizeFill);
 
       mm.add(MOTION_OK, () => {
-        // Flutua de leve (parado no topo ou estacionado no trecho atual).
+        // Flutua de leve (parado no topo ou estacionado na aula atual).
         gsap.to(bob.current, { y: -2.5, duration: 1.4, ease: "sine.inOut", yoyo: true, repeat: -1 });
 
         // Giro extra por cima da rota: parado no topo o avião aponta para CIMA (+180°);
@@ -81,8 +81,8 @@ export function FlightTimeline({ children }: { children: ReactNode }) {
           },
         });
         // 2) Desce pela linha com o mesmo início/fim da linha azul: fica sempre na ponta dela
-        //    e estaciona no fim do trecho atual. A altura é recalculada no resize.
-        if (lastFlown)
+        //    e estaciona na aula atual. A altura é recalculada no resize.
+        if (lesson)
           gsap.fromTo(
             plane.current,
             { y: 0, rotation: 90 },
@@ -94,21 +94,21 @@ export function FlightTimeline({ children }: { children: ReactNode }) {
               scrollTrigger: {
                 trigger: root.current,
                 start: lineStart,
-                endTrigger: lastFlown,
-                end: "bottom 45%",
+                endTrigger: lesson,
+                end: "center 45%",
                 scrub: 0.4,
                 invalidateOnRefresh: true,
               },
             },
           );
-        if (lastFlown)
+        if (lesson)
           gsap.fromTo(
             fill.current,
             { scaleY: 0 },
             {
               scaleY: 1,
               ease: "none",
-              scrollTrigger: { trigger: root.current, start: lineStart, endTrigger: lastFlown, end: "bottom 45%", scrub: 0.4, invalidateOnRefresh: true },
+              scrollTrigger: { trigger: root.current, start: lineStart, endTrigger: lesson, end: "center 45%", scrub: 0.4, invalidateOnRefresh: true },
             },
           );
         stops.forEach((stop) =>
@@ -128,9 +128,9 @@ export function FlightTimeline({ children }: { children: ReactNode }) {
         );
       });
 
-      // Sem animação: linha (até o trecho atual) completa e pontos acesos.
+      // Sem animação: linha (até a aula atual) completa e pontos acesos.
       mm.add(REDUCED, () => {
-        // Sem animação: avião já estacionado no trecho atual, apontando para baixo.
+        // Sem animação: avião já estacionado na aula atual, apontando para baixo.
         gsap.set(plane.current, { x: 0, y: flownHeight(), rotation: 90 });
         gsap.set(fill.current, { scaleY: 1 });
         stops.forEach((s) => s.setAttribute("data-active", ""));
@@ -156,7 +156,7 @@ export function FlightTimeline({ children }: { children: ReactNode }) {
       >
         ▾
       </span>
-      {/* Avião: decola do "Plano de voo" e acompanha a linha azul até o trecho atual. */}
+      {/* Avião: decola do "Plano de voo" e acompanha a linha azul até a aula atual. */}
       <div ref={plane} className="pointer-events-none absolute top-0 left-[calc(var(--tl-label)+10px)] z-20 will-change-transform" aria-hidden>
         <span ref={turn} className="block">
           <span ref={bob} className="block">
