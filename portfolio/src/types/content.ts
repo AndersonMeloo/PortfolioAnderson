@@ -43,6 +43,8 @@ export interface Profile {
   since: number;
   /** Fuso horário usado no relógio e na barra de menus. */
   clock: { label: string; timeZone: string };
+  /** Cidade exibida na página System Design (coordenadas da cidade, nunca o endereço). */
+  location: { label: string; latitude: number; longitude: number };
   /** Cidade e coordenadas do widget de clima (Open-Meteo). */
   weather: { city: string; latitude: number; longitude: number };
   photo: { src: string; alt: string };

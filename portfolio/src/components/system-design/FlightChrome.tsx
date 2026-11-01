@@ -8,7 +8,7 @@ function coords(lat: number, lon: number) {
   return `${f(lat, "N", "S")}, ${f(lon, "E", "W")}`;
 }
 
-const meta = [profile.name, `${profile.weather.city}, BR`, coords(profile.weather.latitude, profile.weather.longitude), "GMT-3"];
+const meta = [profile.name, profile.location.label, coords(profile.location.latitude, profile.location.longitude), "GMT-3"];
 
 /** Bloco de informações: fixo à esquerda no desktop, centralizado no topo no mobile. */
 export function FlightAside() {

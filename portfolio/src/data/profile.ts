@@ -21,6 +21,7 @@ export const profile: Profile = {
   since: 2023,
   // [CONFIRMAR] cidade/fuso exibidos no relógio e na barra de menus.
   clock: { label: "Brasil", timeZone: "America/Sao_Paulo" },
+  location: { label: "Guarulhos, SP", latitude: -23.4538, longitude: -46.5333 },
   // Cidade do widget de clima. Coordenadas: https://open-meteo.com/en/docs
   weather: { city: "São Paulo", latitude: -23.5505, longitude: -46.6333 },
   photo: { src: "/images/profile/anderson-2026.png", alt: "Foto de Anderson Melo" },

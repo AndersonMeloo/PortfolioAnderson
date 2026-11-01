@@ -128,10 +128,10 @@ export function LegEntry({ leg }: { leg: Leg }) {
 
       <div className={planned ? "pl-2 opacity-60 md:pl-3" : "pl-2 md:pl-3"}>
         <span className="mb-2 flex -space-x-1.5" aria-hidden>
-          {leg.topics.slice(0, 3).map((t) => {
-            const Icon = icons[t.icon];
+          {[...new Set(leg.topics.map((t) => t.icon))].slice(0, 3).map((name) => {
+            const Icon = icons[name];
             return (
-              <span key={t.name} className="flex h-[26px] w-[26px] items-center justify-center rounded-full border-2 border-[#faf5f5]" style={{ background: leg.color }}>
+              <span key={name} className="flex h-[26px] w-[26px] items-center justify-center rounded-full border-2 border-[#faf5f5]" style={{ background: leg.color }}>
                 <Icon className="h-3 w-3" color="#fff" strokeWidth={2.4} />
               </span>
             );
@@ -167,7 +167,7 @@ export function LegEntry({ leg }: { leg: Leg }) {
                 <TopicFan topic={t} color={leg.color} />
                 <div className="min-w-0">
                   <p className="text-[14px] font-medium text-[#313030]">{t.name}</p>
-                  <p className="text-[13px] font-medium text-[#666]">{t.description}</p>
+                  {t.description && <p className="text-[13px] font-medium text-[#666]">{t.description}</p>}
                 </div>
               </div>
             </li>
