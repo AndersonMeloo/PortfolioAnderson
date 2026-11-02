@@ -245,7 +245,7 @@ test("/system-design: linha azul e avião terminam na aula atual", async ({ page
   await page.goto("/system-design");
   const lesson = page.locator("[data-current-lesson]");
   await expect(lesson).toHaveCount(1);
-  await expect(lesson).toContainText("Introdução a Bancos de Dados");
+  await expect(lesson).toContainText("DBs");
   const fillH = await page.locator("[data-leg]").first().evaluate((el) => (el.parentElement!.children[1] as HTMLElement).offsetHeight);
   const lessonCenter = await lesson.evaluate((el: HTMLElement) => (el.offsetParent as HTMLElement).offsetTop + el.offsetTop + el.offsetHeight / 2);
   expect(Math.abs(fillH - lessonCenter)).toBeLessThanOrEqual(1);

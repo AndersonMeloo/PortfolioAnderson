@@ -54,7 +54,7 @@ export interface Leg {
 }
 
 /** Aula em que parei: o avião estaciona aqui. Precisa ser o nome de uma aula do módulo "current". */
-export const currentLesson = "Introdução a Bancos de Dados";
+export const currentLesson = "DBs";
 
 export const systemDesignPage = {
   title: "System Design",
