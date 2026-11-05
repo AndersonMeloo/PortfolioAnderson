@@ -54,7 +54,7 @@ export interface Leg {
 }
 
 /** Aula em que parei: o avião estaciona aqui. Precisa ser o nome de uma aula do módulo "current". */
-export const currentLesson = "Sharding";
+export const currentLesson = "Teorema CAP";
 
 export const systemDesignPage = {
   title: "System Design",
