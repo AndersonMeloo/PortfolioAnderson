@@ -54,7 +54,7 @@ export interface Leg {
 }
 
 /** Aula em que parei: o avião estaciona aqui. Precisa ser o nome de uma aula do módulo "current". */
-export const currentLesson = "Reads, Writes e Gargalos";
+export const currentLesson = "NoSQL Intro";
 
 export const systemDesignPage = {
   title: "System Design",
@@ -116,10 +116,10 @@ export const legs: Leg[] = [
     ["Locks Otimistas e Pessimistas", "Duas formas de evitar que edições simultâneas sobrescrevam dados."],
     ["Federation", "Separa os bancos por função, como usuários e pedidos, para dividir a carga."],
     ["Locks", "Travas que controlam o acesso simultâneo ao mesmo dado."],
-  ], "current"),
+  ], "done"),
   leg(3, "NoSQL", "layers", "Modelos além do relacional", "Quando sair das tabelas para ganhar flexibilidade e escala.", [
     ["NoSQL Intro", "Bancos sem tabelas fixas, como documentos e chave-valor, para dados flexíveis e grande escala."],
-  ]),
+  ], "current"),
   leg(4, "Queues (Filas)", "inbox", "Trabalho fora da requisição", "Desacoplar serviços e processar tarefas de forma assíncrona.", [
     ["Message Queue", "Guarda mensagens para serem processadas depois, sem travar quem as enviou."],
     ["Filas e DBs", "Por que uma fila é diferente de usar o banco de dados para enfileirar tarefas."],
