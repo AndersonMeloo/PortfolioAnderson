@@ -57,6 +57,7 @@ export function Footer() {
             ))}
           </ul>
           <div className="flex flex-col gap-3 text-sm">
+            {/* Oculto por enquanto: descomente para voltar a mostrar a disponibilidade.
             <p className="flex items-center gap-2 text-black/70">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#28B446] opacity-60 motion-reduce:animate-none" />
@@ -64,6 +65,7 @@ export function Footer() {
               </span>
               Disponível para oportunidades
             </p>
+            */}
             <p className="text-black/55">
               WhatsApp:{" "}
               <a
