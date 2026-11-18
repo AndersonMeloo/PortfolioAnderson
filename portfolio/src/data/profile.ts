@@ -8,11 +8,11 @@ export const profile: Profile = {
   firstName: "Anderson",
   name: "Anderson Melo",
   initials: "AM",
-  role: "Desenvolvedor Full Stack",
+  role: "Full Stack Developer",
   headline: {
     intro: "Sou Anderson.",
-    lead: "Desenvolvedor",
     highlight: "Full Stack",
+    trail: "Developer",
   },
   subtitle:
     "Transformo ideias em aplicações que resolvem problemas reais, com foco em performance, SEO e código limpo.",

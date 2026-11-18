@@ -35,8 +35,8 @@ export interface Profile {
   name: string;
   initials: string;
   role: string;
-  /** Linha 1 e 2 do título da hero. `highlight` aparece sublinhado. */
-  headline: { intro: string; lead: string; highlight: string };
+  /** Linha 1 e 2 do título da hero (linha 2 = `highlight` sublinhado + `trail`). */
+  headline: { intro: string; highlight: string; trail: string };
   subtitle: string;
   tagline: string;
   availability: string;

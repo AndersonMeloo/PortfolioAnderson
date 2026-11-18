@@ -17,7 +17,7 @@ const bricolage = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
   title: `${profile.name} | ${profile.role}`,
-  description: `Portfólio de ${profile.name}, ${profile.role.toLowerCase()} com foco em TypeScript, Next.js, NestJS, APIs REST, PostgreSQL, MongoDB, performance e SEO.`,
+  description: `Portfólio de ${profile.name}, ${profile.role} com foco em TypeScript, Next.js, NestJS, APIs REST, PostgreSQL, MongoDB, performance e SEO.`,
 };
 
 export const viewport: Viewport = {

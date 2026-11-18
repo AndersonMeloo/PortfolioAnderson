@@ -42,8 +42,8 @@ function Title({ className }: { className?: string }) {
         {headline.intro}
       </span>
       <span data-intro-title className="block">
-        {headline.lead}{" "}
-        <span className="underline decoration-black/25 decoration-[3px] underline-offset-[6px]">{headline.highlight}</span>.
+        <span className="underline decoration-black/25 decoration-[3px] underline-offset-[6px]">{headline.highlight}</span>{" "}
+        {headline.trail}.
       </span>
     </h1>
   );
