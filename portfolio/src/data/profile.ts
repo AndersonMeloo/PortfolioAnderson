@@ -15,7 +15,7 @@ export const profile: Profile = {
     trail: "Developer",
   },
   subtitle:
-    "Transformo ideias em aplicações que resolvem problemas reais, com foco em performance, SEO e código limpo.",
+    "Transformo ideias em aplicações que resolvem problemas reais. Hoje, aprofundando em System Design e arquitetura de sistemas que escalam.",
   tagline: "Transformando ideias em código desde 2023.",
   availability: "Disponível para oportunidades • Aberto a novos projetos",
   since: 2023,
